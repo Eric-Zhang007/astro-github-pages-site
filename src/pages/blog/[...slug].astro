@@ -1,0 +1,36 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sitePath } from '../../data/site';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('blog')).filter((post) => !post.data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.(md|mdx)$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={`${post.data.title} • Eric Zhang`} description={post.data.description}>
+  <main class="article-page">
+    <article class="article card">
+      <a class="back-link" href={sitePath('blog/')}>← Back to Blog</a>
+      <header>
+        <p class="kicker">Blog</p>
+        <h1>{post.data.title}</h1>
+        <div class="article-meta">
+          <time>{post.data.date.toISOString().slice(0, 10)}</time>
+          {post.data.tags.map((tag) => <span>{tag}</span>)}
+        </div>
+        {post.data.description && <p class="article-description">{post.data.description}</p>}
+      </header>
+      <div class="article-body">
+        <Content />
+      </div>
+    </article>
+  </main>
+</BaseLayout>

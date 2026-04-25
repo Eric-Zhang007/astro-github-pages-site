@@ -1,6 +1,11 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { blogPosts } from '../data/site';
+import { sitePath } from '../data/site';
+
+const blogPosts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <BaseLayout title="Blog • Eric Zhang">
@@ -8,7 +13,7 @@ import { blogPosts } from '../data/site';
     <section class="page-title card">
       <p class="kicker">Blog</p>
       <h1>Blog</h1>
-      <p>正式发布的文章会出现在这里。没有发布时不显示占位文章。</p>
+      <p>正式发布的文章会出现在这里。文章源文件放在 <code>src/content/blog/</code>。</p>
     </section>
 
     <section class="card list-card">
@@ -16,10 +21,10 @@ import { blogPosts } from '../data/site';
         blogPosts.length > 0 ? (
           <div class="item-list">
             {blogPosts.map((post) => (
-              <a href={post.href}>
-                <h3>{post.title}</h3>
-                {post.summary && <p>{post.summary}</p>}
-                <time>{post.date}</time>
+              <a href={sitePath(`blog/${post.id.replace(/\\.(md|mdx)$/, '')}/`)}>
+                <h3>{post.data.title}</h3>
+                {post.data.description && <p>{post.data.description}</p>}
+                <time>{post.data.date.toISOString().slice(0, 10)}</time>
               </a>
             ))}
           </div>

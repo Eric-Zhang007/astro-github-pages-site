@@ -32,6 +32,7 @@ const notes = read('notes/index.html');
 const projects = read('projects/index.html');
 const article = read('blog/jepa-introduction/index.html');
 const login = read('login/index.html');
+const worldModels = read('blog/collections/world-models/index.html');
 const css = readdirSync(join(dist, '_astro'))
   .filter((file) => file.endsWith('.css'))
   .map((file) => readFileSync(join(dist, '_astro', file), 'utf8'))
@@ -73,10 +74,11 @@ const pageChecks = {
   projects: ['Page 1 - Showing 0 of 0 projects', 'Collections', 'Tags'],
   article: ['toc-panel', 'Comments', 'Arxiv ID', '幻觉翻译', 'paper-figure-link', 'collection-list', 'World Models', 'article-info-card', 'Buy me a cup of coffee', 'post-neighbors', 'CC BY-NC-SA 4.0'],
   login: ['Content manager', 'GitHub token', 'Only', 'Commit post to GitHub', 'New collection label', 'arXiv ID'],
+  worldModels: ['World Models', 'JEPA：一种面向世界模型的自监督学习思路'],
 };
 
 for (const [name, needles] of Object.entries(pageChecks)) {
-  const html = { homepage, blog, research, notes, projects, article, login }[name];
+  const html = { homepage, blog, research, notes, projects, article, login, worldModels }[name];
   for (const needle of needles) {
     if (!html.includes(needle)) {
       throw new Error(`${name} missing expected content: ${needle}`);

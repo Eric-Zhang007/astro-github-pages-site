@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { sitePath } from '../../../data/site';
-import { sectionCollections, slugify } from '../../../data/blog';
+import { sectionCollections } from '../../../data/blog';
 
 export async function getStaticPaths() {
   return sectionCollections.blog.map((collection) => ({ params: { collection: collection.slug }, props: { collection } }));
@@ -10,7 +10,7 @@ export async function getStaticPaths() {
 
 const { collection } = Astro.props;
 const posts = (await getCollection('blog'))
-  .filter((post) => !post.data.draft && post.data.category && slugify(post.data.category) === collection.slug)
+  .filter((post) => !post.data.draft && post.data.collection === collection.slug)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 

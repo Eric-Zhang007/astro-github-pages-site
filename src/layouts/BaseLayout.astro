@@ -369,29 +369,21 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
   }
 
   .page-main { display: grid; gap: 18px; }
-  .page-title h1 { font-size: clamp(1.45rem, 3vw, 2.35rem); font-weight: 480; }
+  .page-title h1 { font-size: clamp(1.45rem, 3vw, 2.35rem); font-weight: 460; }
   .compact-title { padding: 24px; }
-  .compact-title h1 { font-size: clamp(1.35rem, 2.6vw, 2.1rem); font-weight: 480; }
+  .compact-title h1 { font-size: clamp(1.35rem, 2.6vw, 2.1rem); font-weight: 460; }
   .page-title p { max-width: 760px; margin-bottom: 0; }
 
   .blog-index { display: grid; gap: 22px; }
   .compact-blog-index { gap: 18px; }
-  .blog-page-head {
+  .blog-page-title {
     display: flex;
     justify-content: space-between;
     align-items: end;
     gap: 18px;
-    padding: 8px 2px 0;
   }
-  .blog-page-head h1 {
-    margin: 0;
-    font-size: clamp(1.8rem, 5vw, 3.2rem);
-    font-weight: 460;
-    line-height: 1;
-    letter-spacing: -0.055em;
-  }
-  .blog-page-head p { margin: 10px 0 0; font-size: 0.94rem; }
-  .blog-page-head a { color: var(--accent); font-size: 0.9rem; font-weight: 500; }
+  .blog-page-title p { margin: 10px 0 0; font-size: 0.94rem; }
+  .blog-page-title a { color: var(--accent); font-size: 0.9rem; font-weight: 500; }
   .blog-shell { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 22px; align-items: start; }
   .blog-shell-rightbar { grid-template-columns: minmax(0, 1fr) 330px; }
   .right-sidebar { display: grid; gap: 18px; position: sticky; top: 98px; }
@@ -604,7 +596,7 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
     .blog-shell-rightbar,
     .post-card,
     .article-layout { grid-template-columns: 1fr; }
-    .blog-page-head { align-items: start; flex-direction: column; }
+    .blog-page-title { align-items: start; flex-direction: column; }
     .profile-card,
     .right-sidebar,
     .toc-panel { position: static; }
@@ -650,7 +642,6 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
     .intro { padding: 28px; }
     .intro h2 { font-size: 2.5rem; }
     .stats { grid-template-columns: 1fr; }
-    .blog-page-head h1 { font-size: 2.15rem; }
     .image-post-card .post-card-body { padding: 22px 54px 22px 22px; }
     .article { padding: 24px; }
     .toc-nav { max-height: 220px; overflow: auto; }

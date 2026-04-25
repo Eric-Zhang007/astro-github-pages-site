@@ -19,7 +19,7 @@ const toc = headings.filter((heading) => heading.depth > 1 && heading.depth < 4)
 const readMinutes = Math.max(1, Math.ceil(post.body.split(/\s+/).filter(Boolean).length / 320));
 const arxivUrl = post.data.paperUrl ?? (post.data.arxivId ? `https://arxiv.org/abs/${post.data.arxivId}` : undefined);
 const translationUrl = post.data.translationUrl ?? (post.data.arxivId ? `https://hjfy.top/arxiv/${post.data.arxivId}` : undefined);
-const showComments = post.data.comments && comments.walineServerURL;
+const showComments = post.data.comments && comments.enabled;
 ---
 
 <BaseLayout title={`${post.data.title} • Eric Zhang`} description={post.data.description}>
@@ -38,6 +38,15 @@ const showComments = post.data.comments && comments.walineServerURL;
         </div>
         {post.data.description && <p class="article-description">{post.data.description}</p>}
         {
+          (arxivUrl || translationUrl || post.data.codeUrl) && (
+            <div class="paper-links paper-links-inline" aria-label="Paper links">
+              {arxivUrl && <a href={arxivUrl} target="_blank" rel="noreferrer"><span>Arxiv ID</span>{post.data.arxivId ?? 'Paper'}</a>}
+              {translationUrl && <a class="translation-link" href={translationUrl} target="_blank" rel="noreferrer"><span>幻觉翻译</span>{post.data.arxivId ?? 'Open'}</a>}
+              {post.data.codeUrl && <a href={post.data.codeUrl} target="_blank" rel="noreferrer"><span>Code</span>GitHub</a>}
+            </div>
+          )
+        }
+        {
           cover && (
             <figure class="article-cover">
               <img src={cover} alt={`${post.data.title} cover`} />
@@ -46,49 +55,47 @@ const showComments = post.data.comments && comments.walineServerURL;
         }
       </header>
 
-      {
-        (arxivUrl || translationUrl || post.data.codeUrl) && (
-          <section class="paper-card">
-            <div class="paper-links">
-              {arxivUrl && <a href={arxivUrl} target="_blank" rel="noreferrer"><span>Arxiv ID</span>{post.data.arxivId ?? 'Paper'}</a>}
-              {translationUrl && <a class="translation-link" href={translationUrl} target="_blank" rel="noreferrer"><span>幻觉翻译</span>{post.data.arxivId ?? 'Open'}</a>}
-              {post.data.codeUrl && <a href={post.data.codeUrl} target="_blank" rel="noreferrer"><span>Code</span>GitHub</a>}
-            </div>
-          </section>
-        )
-      }
-
       <div class="article-body">
         <Content />
       </div>
 
       {
         post.data.figures.length > 0 && (
-          <section class="paper-figures">
+          <section class="paper-figures" aria-label="Paper figures">
             {post.data.figures.map((figure) => (
-              <figure>
-                <img src={sitePath(figure.src)} alt={figure.alt ?? ''} loading="lazy" />
-                {figure.caption && <figcaption>{figure.caption}</figcaption>}
-              </figure>
+              <a class="paper-figure-link" href={sitePath(figure.src)} target="_blank" rel="noreferrer">
+                <figure>
+                  <img src={sitePath(figure.src)} alt={figure.alt ?? ''} loading="lazy" />
+                  {figure.caption && <figcaption>{figure.caption}</figcaption>}
+                </figure>
+              </a>
             ))}
           </section>
         )
       }
 
-      {showComments && <div id="waline" class="comments-panel"></div>}
       {
         showComments && (
-          <script define:vars={{ serverURL: comments.walineServerURL }}>
-            import('https://unpkg.com/@waline/client@v3/dist/waline.js').then(({ init }) => {
-              init({ el: '#waline', serverURL, dark: 'html[data-theme="dark"]' });
-            });
-          </script>
+          <section class="comments-panel" aria-label="Comments">
+            <div class="comments-heading">
+              <span>Comments</span>
+            </div>
+            <script
+              src="https://utteranc.es/client.js"
+              repo={comments.repo}
+              issue-term={comments.issueTerm}
+              label={comments.label}
+              theme={comments.theme}
+              crossorigin="anonymous"
+              async
+            ></script>
+          </section>
         )
       }
     </article>
 
     <aside class="toc-panel card" aria-label="Table of contents">
-      <p class="toc-title">TABLE OF CONTENTS</p>
+      <p class="toc-title">CONTENTS</p>
       {
         toc.length > 0 && (
           <nav class="toc-nav">

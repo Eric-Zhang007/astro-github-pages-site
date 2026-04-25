@@ -6,7 +6,12 @@ export const blogCollections = [
 ] as const;
 
 export const comments = {
-  walineServerURL: '',
+  provider: 'utterances',
+  enabled: true,
+  repo: 'Eric-Zhang007/astro-github-pages-site',
+  issueTerm: 'pathname',
+  label: 'comment',
+  theme: 'github-dark-orange',
 } as const;
 
 export function slugify(value: string) {

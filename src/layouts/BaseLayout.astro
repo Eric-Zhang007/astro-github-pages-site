@@ -175,7 +175,7 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
     backdrop-filter: blur(16px);
   }
 
-  .brand { font-weight: 800; letter-spacing: -0.02em; }
+  .brand { font-weight: 520; letter-spacing: -0.015em; }
 
   nav {
     display: flex;
@@ -264,7 +264,7 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
     margin: 0 0 10px;
     color: var(--accent);
     font-size: 0.86rem;
-    font-weight: 800;
+    font-weight: 520;
     letter-spacing: 0.14em;
     text-transform: uppercase;
   }
@@ -293,7 +293,7 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
     display: inline-flex;
     margin-top: 8px;
     color: var(--accent);
-    font-weight: 750;
+    font-weight: 520;
   }
 
   .two-column {
@@ -348,7 +348,7 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
     background: color-mix(in srgb, var(--accent-soft) 52%, transparent);
   }
 
-  .stats strong { display: block; font-size: 2rem; letter-spacing: -0.05em; }
+  .stats strong { display: block; font-size: 1.65rem; font-weight: 520; letter-spacing: -0.04em; }
   .stats span { color: var(--muted); font-size: 0.88rem; }
 
   .empty {
@@ -369,9 +369,9 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
   }
 
   .page-main { display: grid; gap: 18px; }
-  .page-title h1 { font-size: clamp(2rem, 4.2vw, 3.6rem); }
+  .page-title h1 { font-size: clamp(1.45rem, 3vw, 2.35rem); font-weight: 480; }
   .compact-title { padding: 24px; }
-  .compact-title h1 { font-size: clamp(1.8rem, 3.6vw, 3rem); }
+  .compact-title h1 { font-size: clamp(1.35rem, 2.6vw, 2.1rem); font-weight: 480; }
   .page-title p { max-width: 760px; margin-bottom: 0; }
 
   .blog-index { display: grid; gap: 22px; }
@@ -385,18 +385,19 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
   }
   .blog-page-head h1 {
     margin: 0;
-    font-size: clamp(2.6rem, 7vw, 5.2rem);
-    line-height: 0.95;
-    letter-spacing: -0.075em;
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
+    font-weight: 460;
+    line-height: 1;
+    letter-spacing: -0.055em;
   }
   .blog-page-head p { margin: 10px 0 0; font-size: 0.94rem; }
-  .blog-page-head a { color: var(--accent); font-size: 0.94rem; font-weight: 720; }
+  .blog-page-head a { color: var(--accent); font-size: 0.9rem; font-weight: 500; }
   .blog-shell { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 22px; align-items: start; }
   .blog-shell-rightbar { grid-template-columns: minmax(0, 1fr) 330px; }
   .right-sidebar { display: grid; gap: 18px; position: sticky; top: 98px; }
   .sidebar-section { padding: 22px; }
   .sidebar-heading { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-  .sidebar-heading h2 { margin: 0; font-size: 0.92rem; letter-spacing: -0.01em; }
+  .sidebar-heading h2 { margin: 0; font-size: 0.82rem; font-weight: 500; letter-spacing: -0.005em; }
   .sidebar-heading span { color: var(--accent); }
   .sidebar-list { display: grid; gap: 9px; }
   .sidebar-list a {
@@ -447,7 +448,7 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
   .post-card-body { display: grid; align-content: center; gap: 12px; padding: clamp(22px, 4vw, 34px); }
   .image-post-card .post-card-body { max-width: 720px; min-height: 230px; padding-right: 64px; }
   .post-card-meta { display: flex; flex-wrap: wrap; gap: 10px; color: rgba(255,255,255,0.7); font-size: 0.86rem; }
-  .post-card h2 { margin: 0; font-size: clamp(1.15rem, 2vw, 1.62rem); line-height: 1.18; letter-spacing: -0.035em; color: #fff; }
+  .post-card h2 { margin: 0; font-size: clamp(1rem, 1.7vw, 1.32rem); font-weight: 470; line-height: 1.28; letter-spacing: -0.025em; color: #fff; }
   .post-card p { margin: 0; color: rgba(255,255,255,0.78); }
   .post-arrow { position: absolute; right: 24px; top: 50%; translate: 0 -50%; color: rgba(255,255,255,0.82); font-size: 2.2rem; }
   .tags { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -471,9 +472,9 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
     justify-content: start;
   }
   .article { padding: clamp(26px, 5vw, 56px); min-width: 0; }
-  .back-link { display: inline-flex; margin-bottom: 28px; color: var(--accent); font-weight: 750; }
-  .article h1 { margin: 0; font-size: clamp(1.95rem, 4.6vw, 3.4rem); line-height: 1.04; letter-spacing: -0.055em; }
-  .article-description { max-width: 720px; font-size: 1rem; }
+  .back-link { display: inline-flex; margin-bottom: 28px; color: var(--accent); font-weight: 500; }
+  .article h1 { margin: 0; font-size: clamp(1.45rem, 3.4vw, 2.35rem); font-weight: 460; line-height: 1.12; letter-spacing: -0.035em; }
+  .article-description { max-width: 720px; font-size: 0.94rem; }
   .article-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 18px 0; }
   .article-meta span,
   .article-meta a {
@@ -487,7 +488,6 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
   .article-meta a:hover { color: var(--text); }
   .article-cover { margin: 30px 0 0; overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: var(--accent-soft); }
   .article-cover img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
-  .paper-card,
   .paper-figures figure,
   .comments-panel,
   .archive-list {
@@ -498,6 +498,7 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
     background: color-mix(in srgb, var(--card-solid) 45%, transparent);
   }
   .paper-links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .paper-links-inline { margin: 18px 0 0; }
   .paper-links a {
     display: inline-flex;
     align-items: stretch;
@@ -508,15 +509,26 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
     color: var(--text);
   }
   .paper-links span { display: inline-flex; align-items: center; padding: 6px 10px; color: var(--accent-strong); background: var(--accent-soft); font-size: 0.82rem; }
-  .paper-links a { padding-right: 10px; }
+  .paper-links a { padding-right: 10px; font-size: 0.88rem; }
   .paper-links a:hover { background: var(--accent-soft); }
   .paper-figures { display: grid; gap: 18px; margin-top: 28px; }
   .paper-figures figure { margin: 0; }
   .paper-figures img { display: block; width: 100%; border-radius: 14px; }
   .paper-figures figcaption { margin-top: 10px; color: var(--muted); font-size: 0.9rem; }
+
+  .comments-heading {
+    margin-bottom: 12px;
+    color: var(--accent);
+    font-size: 0.86rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .paper-figure-link { display: block; }
+  .paper-figure-link:hover figure { border-color: color-mix(in srgb, var(--accent) 52%, var(--line)); }
   .article-body { margin-top: 34px; }
-  .article-body h2 { scroll-margin-top: 110px; margin-top: 2em; font-size: 1.32rem; letter-spacing: -0.025em; }
-  .article-body h3 { scroll-margin-top: 110px; margin-top: 1.6em; font-size: 1.08rem; }
+  .article-body h2 { scroll-margin-top: 110px; margin-top: 2em; font-size: 1.05rem; font-weight: 500; letter-spacing: -0.015em; }
+  .article-body h3 { scroll-margin-top: 110px; margin-top: 1.6em; font-size: 0.96rem; font-weight: 500; }
   .article-body p, .article-body li { color: var(--text); line-height: 1.92; }
   .article-body a { color: var(--accent-strong); text-decoration: underline; text-underline-offset: 0.18em; }
   .article-body blockquote { margin: 24px 0; padding: 4px 0 4px 18px; border-left: 3px solid var(--accent); color: var(--muted); }
@@ -528,21 +540,22 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
     background: color-mix(in srgb, var(--card-solid) 55%, transparent);
   }
   .toc-panel { position: sticky; top: 98px; padding: 22px; max-height: calc(100vh - 118px); overflow: auto; }
-  .toc-title { margin: 0 0 14px; color: var(--accent); font-size: 0.74rem; font-weight: 850; letter-spacing: 0.14em; }
+  .toc-title { margin: 0 0 14px; color: var(--accent); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; }
   .toc-nav { display: grid; gap: 6px; }
   .toc-nav a {
     display: block;
     border-left: 2px solid var(--line);
     padding: 7px 0 7px 12px;
     color: var(--muted);
-    font-size: 0.9rem;
-    line-height: 1.35;
+    font-size: 0.82rem;
+    font-weight: 400;
+    line-height: 1.4;
   }
   .toc-nav a:hover { border-left-color: var(--accent); color: var(--text); }
   .toc-depth-3 { margin-left: 12px; font-size: 0.84rem !important; }
   .archive-list { display: grid; gap: 22px; }
   .archive-year { display: grid; gap: 10px; }
-  .archive-year-title { color: var(--accent); font-size: 1.2rem; font-weight: 800; }
+  .archive-year-title { color: var(--accent); font-size: 1rem; font-weight: 500; }
   .archive-posts { display: grid; gap: 8px; }
   .archive-posts a { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 12px; align-items: baseline; padding: 10px 0; border-top: 1px solid var(--line); }
   .archive-posts span { color: var(--text); }
@@ -562,22 +575,22 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
     position: fixed;
     left: -120px;
     top: -120px;
-    z-index: 0;
-    width: 240px;
-    height: 240px;
+    z-index: 20;
+    width: 320px;
+    height: 320px;
     border-radius: 50%;
     pointer-events: none;
-    background: radial-gradient(circle, rgba(128, 189, 215, 0.22), transparent 68%);
+    background: radial-gradient(circle, rgba(128, 189, 215, 0.38), rgba(154, 138, 255, 0.14) 42%, transparent 70%);
     mix-blend-mode: plus-lighter;
-    transition: transform 90ms linear;
+    transition: transform 70ms linear;
   }
   .particle-layer { position: fixed; inset: 0; z-index: 999; pointer-events: none; overflow: hidden; }
   .particle-layer span {
     position: absolute;
-    width: 7px;
-    height: 7px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
-    background: var(--accent-strong);
+    background: linear-gradient(135deg, var(--accent-strong), #ffffff);
     animation: particle-pop 720ms ease-out forwards;
   }
   @keyframes particle-pop {
@@ -637,7 +650,7 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
     .intro { padding: 28px; }
     .intro h2 { font-size: 2.5rem; }
     .stats { grid-template-columns: 1fr; }
-    .blog-page-head h1 { font-size: 2.9rem; }
+    .blog-page-head h1 { font-size: 2.15rem; }
     .image-post-card .post-card-body { padding: 22px 54px 22px 22px; }
     .article { padding: 24px; }
     .toc-nav { max-height: 220px; overflow: auto; }

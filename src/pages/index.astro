@@ -58,9 +58,7 @@ const recentPosts = (await getCollection('blog'))
                   </article>
                 ))}
               </div>
-            ) : (
-              <p class="empty">No education entries published yet.</p>
-            )
+            ) : null
           }
         </div>
       </section>
@@ -81,9 +79,7 @@ const recentPosts = (await getCollection('blog'))
                 </a>
               ))}
             </div>
-          ) : (
-            <p class="empty">No blog posts yet.</p>
-          )
+          ) : null
         }
       </section>
 
@@ -101,9 +97,7 @@ const recentPosts = (await getCollection('blog'))
                 </article>
               ))}
             </div>
-          ) : (
-            <p class="empty">No activity yet.</p>
-          )
+          ) : null
         }
       </section>
     </section>

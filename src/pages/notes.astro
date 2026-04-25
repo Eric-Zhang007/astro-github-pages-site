@@ -8,7 +8,6 @@ import { notes } from '../data/site';
     <section class="page-title card">
       <p class="kicker">Notes</p>
       <h1>Notes</h1>
-      <p>公开笔记会出现在这里。没有内容时保持为空状态。</p>
     </section>
 
     <section class="card list-card">
@@ -23,9 +22,7 @@ import { notes } from '../data/site';
               </a>
             ))}
           </div>
-        ) : (
-          <p class="empty">No notes published yet.</p>
-        )
+        ) : null
       }
     </section>
   </main>

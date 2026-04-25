@@ -8,7 +8,6 @@ import { projects } from '../data/site';
     <section class="page-title card">
       <p class="kicker">Projects</p>
       <h1>Projects</h1>
-      <p>公开项目会出现在这里。没有内容时不虚构项目。</p>
     </section>
 
     <section class="card list-card">
@@ -22,9 +21,7 @@ import { projects } from '../data/site';
               </a>
             ))}
           </div>
-        ) : (
-          <p class="empty">No projects published yet.</p>
-        )
+        ) : null
       }
     </section>
   </main>

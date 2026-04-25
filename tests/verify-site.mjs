@@ -11,6 +11,7 @@ const requiredPages = [
   'projects/index.html',
   'links/index.html',
   'about/index.html',
+  'login/index.html',
   'blog/jepa-introduction/index.html',
   'tags/JEPA/index.html',
   'tags/world model/index.html',
@@ -30,6 +31,7 @@ const research = read('research/index.html');
 const notes = read('notes/index.html');
 const projects = read('projects/index.html');
 const article = read('blog/jepa-introduction/index.html');
+const login = read('login/index.html');
 const css = readdirSync(join(dist, '_astro'))
   .filter((file) => file.endsWith('.css'))
   .map((file) => readFileSync(join(dist, '_astro', file), 'utf8'))
@@ -69,11 +71,12 @@ const pageChecks = {
   research: ['Page 1 - Showing 5 of 5 interests', 'Collections', 'Tags', 'Research interests'],
   notes: ['Page 1 - Showing 0 of 0 notes', 'Collections', 'Tags'],
   projects: ['Page 1 - Showing 0 of 0 projects', 'Collections', 'Tags'],
-  article: ['toc-panel', 'Comments', 'Arxiv ID', '幻觉翻译', 'paper-figure-link'],
+  article: ['toc-panel', 'Comments', 'Arxiv ID', '幻觉翻译', 'paper-figure-link', 'collection-list', 'World Models', 'article-info-card', 'Buy me a cup of coffee', 'post-neighbors', 'CC BY-NC-SA 4.0'],
+  login: ['Content manager', 'GitHub token', 'Only', 'Commit post to GitHub', 'New collection label', 'arXiv ID'],
 };
 
 for (const [name, needles] of Object.entries(pageChecks)) {
-  const html = { homepage, blog, research, notes, projects, article }[name];
+  const html = { homepage, blog, research, notes, projects, article, login }[name];
   for (const needle of needles) {
     if (!html.includes(needle)) {
       throw new Error(`${name} missing expected content: ${needle}`);
@@ -89,6 +92,14 @@ for (const needle of ['cursor-ring', 'cursor-dot', 'cursor-trail', 'cursor-rippl
 
 if (blog.includes('blog/collections/research') || blog.includes('blog/collections/notes')) {
   throw new Error('Blog collections still point to Research/Notes as fake collections.');
+}
+
+if (!blog.includes('blog/collections/world-models/')) {
+  throw new Error('Configured Blog collection is missing.');
+}
+
+if (homepage.includes('login/')) {
+  throw new Error('Login should stay hidden from homepage navigation.');
 }
 
 if (research.includes('href="/astro-github-pages-site/tags/World%20models')) {

@@ -1,11 +1,13 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { comments, tagHref } from '../../data/blog';
+import { comments, sectionCollections, tagHref } from '../../data/blog';
 import { sitePath } from '../../data/site';
 
 export async function getStaticPaths() {
-  const posts = (await getCollection('blog')).filter((post) => !post.data.draft);
+  const posts = (await getCollection('blog'))
+    .filter((post) => !post.data.draft)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   return posts.map((post) => ({
     params: { slug: post.id.replace(/\.(md|mdx)$/, '') },
     props: { post },
@@ -13,13 +15,28 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
+const allPosts = (await getCollection('blog'))
+  .filter((item) => !item.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const { Content, headings } = await render(post);
+const slug = post.id.replace(/\.(md|mdx)$/, '');
+const postIndex = allPosts.findIndex((item) => item.id === post.id);
+const previousPost = postIndex >= 0 ? allPosts[postIndex + 1] : undefined;
+const nextPost = postIndex > 0 ? allPosts[postIndex - 1] : undefined;
 const cover = post.data.cover ? sitePath(post.data.cover) : undefined;
 const toc = headings.filter((heading) => heading.depth > 1 && heading.depth < 4);
 const readMinutes = Math.max(1, Math.ceil(post.body.split(/\s+/).filter(Boolean).length / 320));
 const arxivUrl = post.data.paperUrl ?? (post.data.arxivId ? `https://arxiv.org/abs/${post.data.arxivId}` : undefined);
 const translationUrl = post.data.translationUrl ?? (post.data.arxivId ? `https://hjfy.top/arxiv/${post.data.arxivId}` : undefined);
 const showComments = post.data.comments && comments.enabled;
+const collection = post.data.collection
+  ? sectionCollections.blog.find((item) => item.slug === post.data.collection)
+  : undefined;
+const collectionPosts = post.data.collection
+  ? allPosts.filter((item) => item.data.collection === post.data.collection)
+  : [];
+const pageUrl = `https://eric-zhang007.github.io/astro-github-pages-site/blog/${slug}/`;
+const licenseHref = 'https://creativecommons.org/licenses/by-nc-sa/4.0/';
 ---
 
 <BaseLayout title={`${post.data.title} • Eric Zhang`} description={post.data.description}>
@@ -44,6 +61,17 @@ const showComments = post.data.comments && comments.enabled;
               {translationUrl && <a class="translation-link" href={translationUrl} target="_blank" rel="noreferrer"><span>幻觉翻译</span>{post.data.arxivId ?? 'Open'}</a>}
               {post.data.codeUrl && <a href={post.data.codeUrl} target="_blank" rel="noreferrer"><span>Code</span>GitHub</a>}
             </div>
+          )
+        }
+        {
+          collection && collectionPosts.length > 0 && (
+            <nav class="collection-list card" aria-label={`${collection.label} posts`}>
+              <p>{collection.label}</p>
+              {collectionPosts.map((item, index) => {
+                const itemSlug = item.id.replace(/\.(md|mdx)$/, '');
+                return <a class={item.id === post.id ? 'active' : ''} href={sitePath(`blog/${itemSlug}/`)}>Batch {index + 1}</a>;
+              })}
+            </nav>
           )
         }
         {
@@ -73,6 +101,48 @@ const showComments = post.data.comments && comments.enabled;
           </section>
         )
       }
+
+      <section class="article-info-card" aria-label="Article information">
+        <div>
+          <h2>{post.data.title}</h2>
+          <p>{pageUrl}</p>
+          <dl>
+            <div>
+              <dt>Author</dt>
+              <dd>Eric Zhang</dd>
+            </div>
+            <div>
+              <dt>Published at</dt>
+              <dd>{post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</dd>
+            </div>
+            <div>
+              <dt>Copyright</dt>
+              <dd><a href={licenseHref} target="_blank" rel="noreferrer">CC BY-NC-SA 4.0</a></dd>
+            </div>
+          </dl>
+          <div class="article-share-row">
+            <a href={pageUrl} aria-label="Open article link">↗</a>
+            <button type="button" data-copy-link={pageUrl} aria-label="Copy article link">⌁</button>
+            <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(post.data.title)}`} target="_blank" rel="noreferrer" aria-label="Share to X">𝕏</a>
+            <a href={`https://bsky.app/intent/compose?text=${encodeURIComponent(`${post.data.title} ${pageUrl}`)}`} target="_blank" rel="noreferrer" aria-label="Share to Bluesky">🦋</a>
+          </div>
+        </div>
+        <span class="copyright-mark" aria-hidden="true">©</span>
+      </section>
+
+      <a class="coffee-bar" href="https://github.com/sponsors/Eric-Zhang007" target="_blank" rel="noreferrer">
+        <span>Buy me a cup of coffee ☕.</span>
+        <span>$</span>
+      </a>
+
+      <nav class="post-neighbors" aria-label="Adjacent posts">
+        <div>
+          {previousPost && <a href={sitePath(`blog/${previousPost.id.replace(/\.(md|mdx)$/, '')}/`)}>‹ {previousPost.data.title}</a>}
+        </div>
+        <div>
+          {nextPost && <a href={sitePath(`blog/${nextPost.id.replace(/\.(md|mdx)$/, '')}/`)}>{nextPost.data.title} ›</a>}
+        </div>
+      </nav>
 
       {
         showComments && (
@@ -107,4 +177,15 @@ const showComments = post.data.comments && comments.enabled;
       }
     </aside>
   </main>
+  <script>
+    document.querySelectorAll('[data-copy-link]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        if (button instanceof HTMLButtonElement) {
+          await navigator.clipboard.writeText(button.dataset.copyLink ?? location.href);
+          button.textContent = '✓';
+          window.setTimeout(() => { button.textContent = '⌁'; }, 1200);
+        }
+      });
+    });
+  </script>
 </BaseLayout>

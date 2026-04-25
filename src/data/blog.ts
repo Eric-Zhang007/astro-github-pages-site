@@ -8,8 +8,16 @@ export type OwnerCollection = {
   href: string;
 };
 
+export const siteOwner = {
+  githubLogin: 'Eric-Zhang007',
+  repo: 'Eric-Zhang007/astro-github-pages-site',
+  branch: 'main',
+} as const;
+
 export const sectionCollections: Record<SectionKey, OwnerCollection[]> = {
-  blog: [],
+  blog: [
+    { label: 'World Models', slug: 'world-models', href: 'blog/collections/world-models/' },
+  ],
   research: [],
   notes: [],
   projects: [],

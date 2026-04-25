@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteOwner, sectionCollections } from '../data/blog';
+---
+
+<BaseLayout title="Login • Eric Zhang">
+  <main class="login-main">
+    <section class="card login-card">
+      <p class="kicker">GitHub Owner Login</p>
+      <h1>Content manager</h1>
+
+      <div class="login-status" data-status>Not signed in</div>
+
+      <label>
+        GitHub token
+        <input data-token type="password" autocomplete="off" placeholder="github_pat_..." />
+      </label>
+
+      <div class="login-actions">
+        <button type="button" data-login>Sign in with GitHub token</button>
+        <button type="button" data-logout>Sign out</button>
+      </div>
+    </section>
+
+    <section class="card manager-card" data-manager hidden>
+      <div class="manager-head">
+        <div>
+          <p class="kicker">Owner tools</p>
+          <h2>Write blog post</h2>
+        </div>
+        <a href="https://github.com/Eric-Zhang007/astro-github-pages-site/actions" target="_blank" rel="noreferrer">Actions</a>
+      </div>
+
+      <form data-post-form>
+        <div class="form-grid">
+          <label>Title<input name="title" required /></label>
+          <label>Slug<input name="slug" required placeholder="my-post-slug" /></label>
+          <label>Date<input name="date" type="date" required /></label>
+          <label>Tags<input name="tags" placeholder="tag1, tag2" /></label>
+          <label>Category<input name="category" placeholder="Research" /></label>
+          <label>
+            Collection
+            <select name="collection">
+              <option value=""></option>
+              {sectionCollections.blog.map((collection) => <option value={collection.slug}>{collection.label}</option>)}
+            </select>
+          </label>
+          <label>New collection label<input name="newCollectionLabel" placeholder="Embodied AI Paper Reading" /></label>
+          <label>New collection slug<input name="newCollectionSlug" placeholder="embodied-ai-paper-reading" /></label>
+          <label>arXiv ID<input name="arxivId" placeholder="2301.08243" /></label>
+          <label>Paper URL<input name="paperUrl" placeholder="https://arxiv.org/abs/..." /></label>
+          <label>Translation URL<input name="translationUrl" placeholder="https://hjfy.top/arxiv/..." /></label>
+          <label>Cover<input name="cover" placeholder="images/blog/cover.svg" /></label>
+        </div>
+        <label>Description<textarea name="description" rows="3"></textarea></label>
+        <label>Markdown body<textarea name="body" rows="16" required></textarea></label>
+        <button type="submit">Commit post to GitHub</button>
+      </form>
+
+      <pre class="manager-log" data-log></pre>
+    </section>
+  </main>
+
+  <script define:vars={{ ownerLogin: siteOwner.githubLogin, repo: siteOwner.repo, branch: siteOwner.branch }}>
+    const tokenInput = document.querySelector('[data-token]');
+    const loginButton = document.querySelector('[data-login]');
+    const logoutButton = document.querySelector('[data-logout]');
+    const statusBox = document.querySelector('[data-status]');
+    const manager = document.querySelector('[data-manager]');
+    const form = document.querySelector('[data-post-form]');
+    const logBox = document.querySelector('[data-log]');
+
+    const storageKey = 'eric-blog-github-token';
+    const apiBase = `https://api.github.com/repos/${repo}`;
+
+    function log(message) {
+      if (logBox) logBox.textContent = `${new Date().toLocaleTimeString()} ${message}\n${logBox.textContent}`;
+    }
+
+    function setSignedIn(user) {
+      statusBox.textContent = `Signed in as ${user.login}`;
+      manager.hidden = false;
+    }
+
+    function setSignedOut(message = 'Not signed in') {
+      statusBox.textContent = message;
+      manager.hidden = true;
+    }
+
+    async function github(path, options = {}) {
+      const token = localStorage.getItem(storageKey);
+      const response = await fetch(path.startsWith('http') ? path : `${apiBase}${path}`, {
+        ...options,
+        headers: {
+          Accept: 'application/vnd.github+json',
+          'X-GitHub-Api-Version': '2022-11-28',
+          ...(options.body ? { 'Content-Type': 'application/json' } : {}),
+          Authorization: `Bearer ${token}`,
+          ...(options.headers ?? {}),
+        },
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.message || `GitHub API ${response.status}`);
+      return data;
+    }
+
+    async function verifyToken(token) {
+      localStorage.setItem(storageKey, token);
+      const user = await github('https://api.github.com/user');
+      if (user.login !== ownerLogin) {
+        localStorage.removeItem(storageKey);
+        throw new Error(`Only ${ownerLogin} can manage this site.`);
+      }
+      setSignedIn(user);
+      log('Owner verified.');
+    }
+
+    loginButton.addEventListener('click', async () => {
+      try {
+        await verifyToken(tokenInput.value.trim());
+      } catch (error) {
+        setSignedOut(error.message);
+        log(error.message);
+      }
+    });
+
+    logoutButton.addEventListener('click', () => {
+      localStorage.removeItem(storageKey);
+      tokenInput.value = '';
+      setSignedOut();
+      log('Signed out.');
+    });
+
+    function slugify(value) {
+      return value.trim().toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '');
+    }
+
+    function yamlString(value) {
+      return JSON.stringify(value ?? '');
+    }
+
+    function markdownFromForm(data) {
+      const tags = data.get('tags').split(',').map((tag) => tag.trim()).filter(Boolean);
+      const arxivId = data.get('arxivId').trim();
+      const paperUrl = data.get('paperUrl').trim() || (arxivId ? `https://arxiv.org/abs/${arxivId}` : '');
+      const translationUrl = data.get('translationUrl').trim() || (arxivId ? `https://hjfy.top/arxiv/${arxivId}` : '');
+      const lines = [
+        '---',
+        `title: ${yamlString(data.get('title').trim())}`,
+        `description: ${yamlString(data.get('description').trim())}`,
+        `date: ${yamlString(data.get('date'))}`,
+        `tags: [${tags.map(yamlString).join(', ')}]`,
+      ];
+      if (data.get('category').trim()) lines.push(`category: ${yamlString(data.get('category').trim())}`);
+      if (data.get('collection').trim() || data.get('newCollectionSlug').trim()) lines.push(`collection: ${yamlString(data.get('newCollectionSlug').trim() || data.get('collection').trim())}`);
+      if (data.get('cover').trim()) lines.push(`cover: ${yamlString(data.get('cover').trim())}`);
+      if (arxivId) lines.push(`arxivId: ${yamlString(arxivId)}`);
+      if (paperUrl) lines.push(`paperUrl: ${yamlString(paperUrl)}`);
+      if (translationUrl) lines.push(`translationUrl: ${yamlString(translationUrl)}`);
+      lines.push('draft: false', '---', '', data.get('body').trim(), '');
+      return lines.join('\n');
+    }
+
+    async function putFile(path, content, message) {
+      let sha;
+      try {
+        const current = await github(`/contents/${encodeURIComponent(path).replaceAll('%2F', '/')}?ref=${branch}`);
+        sha = current.sha;
+      } catch (error) {
+        if (!error.message.includes('Not Found')) throw error;
+      }
+      return github(`/contents/${encodeURIComponent(path).replaceAll('%2F', '/')}`, {
+        method: 'PUT',
+        body: JSON.stringify({ message, branch, content: btoa(unescape(encodeURIComponent(content))), ...(sha ? { sha } : {}) }),
+      });
+    }
+
+    async function addCollection(label, slug) {
+      if (!label || !slug) return;
+      const file = await github(`/contents/src/data/blog.ts?ref=${branch}`);
+      const source = decodeURIComponent(escape(atob(file.content.replace(/\n/g, ''))));
+      if (source.includes(`slug: '${slug}'`) || source.includes(`slug: "${slug}"`)) return;
+      const entry = `    { label: '${label.replaceAll("'", "\\'")}', slug: '${slug}', href: 'blog/collections/${slug}/' },\n`;
+      const next = source.replace('  blog: [\n', `  blog: [\n${entry}`);
+      await github('/contents/src/data/blog.ts', {
+        method: 'PUT',
+        body: JSON.stringify({ message: `Add blog collection ${label}`, branch, sha: file.sha, content: btoa(unescape(encodeURIComponent(next))) }),
+      });
+      log(`Collection committed: ${label}`);
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      try {
+        const data = new FormData(form);
+        const slug = slugify(data.get('slug') || data.get('title'));
+        const newLabel = data.get('newCollectionLabel').trim();
+        const newSlug = slugify(data.get('newCollectionSlug') || newLabel);
+        if (newLabel && newSlug) await addCollection(newLabel, newSlug);
+        const markdown = markdownFromForm(data);
+        await putFile(`src/content/blog/${slug}.md`, markdown, `Add blog post ${data.get('title').trim()}`);
+        log(`Post committed: ${slug}. GitHub Pages will rebuild automatically.`);
+      } catch (error) {
+        log(error.message);
+      }
+    });
+
+    const saved = localStorage.getItem(storageKey);
+    if (saved) verifyToken(saved).catch((error) => setSignedOut(error.message));
+  </script>
+</BaseLayout>

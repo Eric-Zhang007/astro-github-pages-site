@@ -8,6 +8,7 @@ const entrySchema = z.object({
   updated: z.coerce.date().optional(),
   tags: z.array(z.string()).default([]),
   category: z.string().optional(),
+  collection: z.string().optional(),
   cover: z.string().optional(),
   arxivId: z.string().optional(),
   paperUrl: z.string().url().optional(),

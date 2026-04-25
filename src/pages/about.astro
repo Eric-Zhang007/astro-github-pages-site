@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProfileCard from '../components/ProfileCard.astro';
+import { educationEntries, profile } from '../data/site';
+---
+
+<BaseLayout title="About • Eric Zhang">
+  <main class="layout">
+    <ProfileCard />
+
+    <section class="content">
+      <section class="page-title card">
+        <p class="kicker">About</p>
+        <h1>{profile.name}</h1>
+        <p>{profile.intro}</p>
+      </section>
+
+      <section class="card list-card">
+        <div class="section-title">
+          <h2>Education</h2>
+          <span>真实经历</span>
+        </div>
+        {
+          educationEntries.length > 0 ? (
+            <div class="timeline">
+              {educationEntries.map((item) => (
+                <article>
+                  <div>
+                    <h3>{item.school}</h3>
+                    <p>{item.degree}</p>
+                    {item.description && <p>{item.description}</p>}
+                  </div>
+                  <time>{item.period}</time>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p class="empty">No education entries published yet.</p>
+          )
+        }
+      </section>
+    </section>
+  </main>
+</BaseLayout>

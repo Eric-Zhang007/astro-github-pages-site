@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { blogPosts } from '../data/site';
+---
+
+<BaseLayout title="Blog • Eric Zhang">
+  <main class="page-main">
+    <section class="page-title card">
+      <p class="kicker">Blog</p>
+      <h1>Blog</h1>
+      <p>正式发布的文章会出现在这里。没有发布时不显示占位文章。</p>
+    </section>
+
+    <section class="card list-card">
+      {
+        blogPosts.length > 0 ? (
+          <div class="item-list">
+            {blogPosts.map((post) => (
+              <a href={post.href}>
+                <h3>{post.title}</h3>
+                {post.summary && <p>{post.summary}</p>}
+                <time>{post.date}</time>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p class="empty">No blog posts yet.</p>
+        )
+      }
+    </section>
+  </main>
+</BaseLayout>

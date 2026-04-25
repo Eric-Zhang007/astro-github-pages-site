@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { links } from '../data/site';
+---
+
+<BaseLayout title="Links • Eric Zhang">
+  <main class="page-main">
+    <section class="page-title card">
+      <p class="kicker">Links</p>
+      <h1>Links</h1>
+      <p>真实可访问的个人链接。</p>
+    </section>
+
+    <section class="card list-card">
+      <div class="item-list">
+        {links.map((link) => (
+          <a href={link.href}>
+            <h3>{link.label}</h3>
+            <p>{link.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,459 +1,117 @@
 ---
-const navItems = ['Blog', 'Research', 'Notes', 'Projects', 'Links', 'About'];
-const research = [
-  'World Models for Autonomous Driving',
-  'Visual Collision / Accident Anticipation',
-  'Object-centric & Scene-graph Reasoning',
-  'VLM / Video Reasoning',
-];
-const education = [
-  { place: 'Research Interest', role: 'World models, VLMs, embodied intelligence', time: 'Now' },
-  { place: 'Autonomous Driving', role: 'End-to-end decision making and closed-loop reasoning', time: 'Focus' },
-];
-const posts = [
-  { title: 'Reading notes on world models', tag: 'Research', date: 'Apr 2026' },
-  { title: 'Visual risk understanding for driving agents', tag: 'Notes', date: 'Apr 2026' },
-  { title: 'Object-centric reasoning and physical prediction', tag: 'Paper', date: 'Mar 2026' },
-];
-const cells = Array.from({ length: 84 }, (_, i) => (i * 7 + 3) % 5);
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProfileCard from '../components/ProfileCard.astro';
+import {
+  activities,
+  blogPosts,
+  educationEntries,
+  profile,
+  researchInterests,
+  sitePath,
+  stats,
+} from '../data/site';
 ---
 
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content="Eric Zhang 的个人主页：研究、笔记、项目与博客。"
-    />
-    <title>Eric Zhang • Personal Site</title>
-  </head>
-  <body>
-    <div class="page">
-      <header class="topbar">
-        <a class="brand" href="/">Eric's Blog</a>
-        <nav aria-label="Primary navigation">
-          {navItems.map((item) => <a href={`#${item.toLowerCase()}`}>{item}</a>)}
-        </nav>
-        <button aria-label="Theme toggle">☾</button>
-      </header>
+<BaseLayout>
+  <main class="layout">
+    <ProfileCard />
 
-      <main class="layout">
-        <aside class="profile-card" id="about">
-          <div class="avatar" aria-hidden="true">E</div>
-          <h1>Eric Zhang</h1>
-          <p class="location">China</p>
-          <div class="links">
-            <a href="https://github.com/Eric-Zhang007">GitHub</a>
-            <a href="mailto:hello@example.com">Email</a>
-            <a href="#research">Scholar</a>
+    <section class="content">
+      <section class="intro card">
+        <p class="kicker">Personal homepage</p>
+        <h2>{profile.headline}</h2>
+        <p>{profile.description}</p>
+        <a class="more" href={sitePath('about/')}>More about me →</a>
+      </section>
+
+      <section class="two-column">
+        <div class="card">
+          <div class="section-title">
+            <h2>Research interests</h2>
+            <span>真实方向</span>
           </div>
-          <section>
-            <h2>About</h2>
-            <p>
-              学生 / AI researcher. 关注 world models、自动驾驶、视觉风险理解、VLM/video reasoning、object-centric reasoning 与 embodied intelligence。
-            </p>
-          </section>
-        </aside>
+          <div class="chips">
+            {researchInterests.map((item) => <span>{item}</span>)}
+          </div>
+        </div>
 
-        <section class="content">
-          <section class="intro card">
-            <p class="kicker">Personal homepage</p>
-            <h2>Research, notes and projects around safer embodied agents.</h2>
-            <p>
-              这里会整理我的论文阅读、研究想法、项目记录和日常笔记。风格更接近个人主页 / 博客，而不是普通项目 landing page。
-            </p>
-            <a class="more" href="#research">More about me →</a>
-          </section>
-
-          <section class="two-column">
-            <div class="card" id="research">
-              <div class="section-title">
-                <h2>Research</h2>
-                <span>方向</span>
-              </div>
-              <div class="chips">
-                {research.map((item) => <span>{item}</span>)}
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="section-title">
-                <h2>Education</h2>
-                <span>经历</span>
-              </div>
+        <div class="card">
+          <div class="section-title">
+            <h2>Education</h2>
+            <span>真实经历</span>
+          </div>
+          {
+            educationEntries.length > 0 ? (
               <div class="timeline">
-                {education.map((item) => (
+                {educationEntries.map((item) => (
                   <article>
                     <div>
-                      <h3>{item.place}</h3>
-                      <p>{item.role}</p>
+                      <h3>{item.school}</h3>
+                      <p>{item.degree}</p>
+                      {item.description && <p>{item.description}</p>}
                     </div>
-                    <time>{item.time}</time>
+                    <time>{item.period}</time>
                   </article>
                 ))}
               </div>
-            </div>
-          </section>
+            ) : (
+              <p class="empty">No education entries published yet.</p>
+            )
+          }
+        </div>
+      </section>
 
-          <section class="stats card">
-            <div>
-              <strong>491</strong>
-              <span>Papers in Zotero</span>
-            </div>
-            <div>
-              <strong>41</strong>
-              <span>Local PDFs</span>
-            </div>
-            <div>
-              <strong>2026</strong>
-              <span>Last Updated</span>
-            </div>
-            <div>
-              <strong>∞</strong>
-              <span>Notes to write</span>
-            </div>
-          </section>
+      <section class="stats card" aria-label="Site status">
+        {stats.map((item) => (
+          <div>
+            <strong>{item.value}</strong>
+            <span>{item.label}</span>
+          </div>
+        ))}
+      </section>
 
-          <section class="card" id="notes">
-            <div class="section-title">
-              <h2>Recent Notes</h2>
-              <span>Blog</span>
-            </div>
-            <div class="posts">
-              {posts.map((post) => (
-                <a href="#">
-                  <span>{post.tag}</span>
+      <section class="card list-card">
+        <div class="section-title">
+          <h2>Blog</h2>
+          <span>文章</span>
+        </div>
+        {
+          blogPosts.length > 0 ? (
+            <div class="item-list">
+              {blogPosts.map((post) => (
+                <a href={post.href}>
                   <h3>{post.title}</h3>
+                  {post.summary && <p>{post.summary}</p>}
                   <time>{post.date}</time>
                 </a>
               ))}
             </div>
-          </section>
+          ) : (
+            <p class="empty">No blog posts yet.</p>
+          )
+        }
+      </section>
 
-          <section class="card activity">
-            <div class="section-title">
-              <h2>Activity</h2>
-              <span>writing heatmap</span>
+      <section class="card activity">
+        <div class="section-title">
+          <h2>Activity</h2>
+          <span>真实更新</span>
+        </div>
+        {
+          activities.length > 0 ? (
+            <div class="item-list">
+              {activities.map((item) => (
+                <article>
+                  <h3>{item.title}</h3>
+                  <time>{item.date}</time>
+                </article>
+              ))}
             </div>
-            <div class="heatmap" aria-label="Writing activity heatmap">
-              {cells.map((level) => <i class={`level-${level}`}></i>)}
-            </div>
-          </section>
-        </section>
-      </main>
-    </div>
-  </body>
-</html>
-
-<style>
-  :root {
-    color-scheme: light dark;
-    --bg: #f7f8fb;
-    --card: rgba(255, 255, 255, 0.82);
-    --card-solid: #ffffff;
-    --text: #20232a;
-    --muted: #69707d;
-    --line: rgba(31, 35, 42, 0.09);
-    --accent: #659eb9;
-    --accent-soft: rgba(101, 158, 185, 0.18);
-    --shadow: 0 18px 45px rgba(34, 42, 54, 0.08);
-    font-family:
-      ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-      "PingFang SC", "Microsoft YaHei", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-  }
-
-  html.dark {
-    --bg: #0b0b10;
-    --card: rgba(22, 24, 31, 0.78);
-    --card-solid: #151820;
-    --text: #f4f6fb;
-    --muted: #a1a7b3;
-    --line: rgba(255, 255, 255, 0.1);
-    --accent: #80bdd7;
-    --accent-soft: rgba(128, 189, 215, 0.16);
-    --shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0b0b10;
-      --card: rgba(22, 24, 31, 0.78);
-      --card-solid: #151820;
-      --text: #f4f6fb;
-      --muted: #a1a7b3;
-      --line: rgba(255, 255, 255, 0.1);
-      --accent: #80bdd7;
-      --accent-soft: rgba(128, 189, 215, 0.16);
-      --shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
-    }
-  }
-
-  * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background:
-      radial-gradient(circle at 14% 10%, var(--accent-soft), transparent 28rem),
-      radial-gradient(circle at 84% 0%, rgba(184, 210, 225, 0.18), transparent 24rem),
-      var(--bg);
-  }
-
-  a { color: inherit; text-decoration: none; }
-
-  .page {
-    width: min(1180px, calc(100% - 32px));
-    margin: 0 auto;
-    padding: 22px 0 56px;
-  }
-
-  .topbar {
-    position: sticky;
-    top: 14px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    padding: 12px 14px;
-    margin-bottom: 24px;
-    border: 1px solid var(--line);
-    border-radius: 24px;
-    background: color-mix(in srgb, var(--card-solid) 78%, transparent);
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(16px);
-  }
-
-  .brand { font-weight: 800; letter-spacing: -0.02em; }
-
-  nav {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    gap: 4px;
-  }
-
-  nav a,
-  .topbar button {
-    border: 0;
-    border-radius: 999px;
-    padding: 8px 12px;
-    background: transparent;
-    color: var(--muted);
-    font: inherit;
-    font-size: 0.92rem;
-  }
-
-  nav a:hover,
-  .topbar button:hover { background: var(--accent-soft); color: var(--text); }
-
-  .layout {
-    display: grid;
-    grid-template-columns: 320px minmax(0, 1fr);
-    gap: 22px;
-    align-items: start;
-  }
-
-  .card,
-  .profile-card {
-    border: 1px solid var(--line);
-    border-radius: 28px;
-    background: var(--card);
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(18px);
-  }
-
-  .profile-card {
-    position: sticky;
-    top: 98px;
-    padding: 28px;
-  }
-
-  .avatar {
-    display: grid;
-    place-items: center;
-    width: 96px;
-    height: 96px;
-    margin-bottom: 20px;
-    border-radius: 30px;
-    background:
-      linear-gradient(135deg, rgba(101, 158, 185, 0.85), rgba(167, 201, 216, 0.55));
-    color: #fff;
-    font-size: 3rem;
-    font-weight: 900;
-  }
-
-  .profile-card h1 {
-    margin: 0;
-    font-size: 2rem;
-    letter-spacing: -0.04em;
-  }
-
-  .location { margin: 8px 0 16px; color: var(--muted); }
-
-  .links { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
-
-  .links a,
-  .chips span {
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    padding: 8px 11px;
-    background: var(--accent-soft);
-    color: var(--text);
-    font-size: 0.9rem;
-  }
-
-  .profile-card h2,
-  .section-title h2 {
-    margin: 0;
-    font-size: 1.1rem;
-    letter-spacing: -0.02em;
-  }
-
-  .profile-card p,
-  .intro p,
-  .timeline p {
-    color: var(--muted);
-    line-height: 1.75;
-  }
-
-  .content { display: grid; gap: 18px; }
-
-  .intro { padding: 38px; }
-
-  .kicker {
-    margin: 0 0 10px;
-    color: var(--accent);
-    font-size: 0.86rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-
-  .intro h2 {
-    max-width: 760px;
-    margin: 0;
-    font-size: clamp(2.5rem, 6vw, 5.8rem);
-    line-height: 0.96;
-    letter-spacing: -0.075em;
-  }
-
-  .intro p { max-width: 720px; font-size: 1.05rem; }
-
-  .more {
-    display: inline-flex;
-    margin-top: 8px;
-    color: var(--accent);
-    font-weight: 750;
-  }
-
-  .two-column {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-  }
-
-  .two-column .card,
-  .stats,
-  .activity,
-  #notes { padding: 26px; }
-
-  .section-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 18px;
-  }
-
-  .section-title span {
-    color: var(--muted);
-    font-size: 0.86rem;
-  }
-
-  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
-
-  .timeline { display: grid; gap: 14px; }
-
-  .timeline article {
-    display: flex;
-    justify-content: space-between;
-    gap: 18px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .timeline article:last-child { padding-bottom: 0; border-bottom: 0; }
-  .timeline h3 { margin: 0 0 4px; font-size: 1rem; }
-  .timeline p { margin: 0; font-size: 0.92rem; }
-  time { white-space: nowrap; color: var(--muted); font-size: 0.86rem; }
-
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-  }
-
-  .stats div {
-    padding: 18px;
-    border: 1px solid var(--line);
-    border-radius: 22px;
-    background: color-mix(in srgb, var(--accent-soft) 52%, transparent);
-  }
-
-  .stats strong { display: block; font-size: 2rem; letter-spacing: -0.05em; }
-  .stats span { color: var(--muted); font-size: 0.88rem; }
-
-  .posts { display: grid; gap: 10px; }
-
-  .posts a {
-    display: grid;
-    grid-template-columns: 80px 1fr auto;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .posts a:last-child { border-bottom: 0; }
-  .posts span { color: var(--accent); font-size: 0.85rem; font-weight: 700; }
-  .posts h3 { margin: 0; font-size: 1rem; }
-
-  .heatmap {
-    display: grid;
-    grid-template-columns: repeat(21, 1fr);
-    gap: 5px;
-  }
-
-  .heatmap i {
-    aspect-ratio: 1;
-    border-radius: 5px;
-    background: color-mix(in srgb, var(--muted) 14%, transparent);
-  }
-
-  .heatmap .level-1 { background: rgba(101, 158, 185, 0.24); }
-  .heatmap .level-2 { background: rgba(101, 158, 185, 0.42); }
-  .heatmap .level-3 { background: rgba(101, 158, 185, 0.62); }
-  .heatmap .level-4 { background: rgba(101, 158, 185, 0.86); }
-
-  @media (max-width: 900px) {
-    .layout,
-    .two-column { grid-template-columns: 1fr; }
-    .profile-card { position: static; }
-    nav { display: none; }
-    .stats { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (max-width: 560px) {
-    .page { width: min(100% - 20px, 1180px); }
-    .intro { padding: 28px; }
-    .intro h2 { font-size: 2.5rem; }
-    .stats { grid-template-columns: 1fr; }
-    .posts a { grid-template-columns: 1fr; gap: 4px; }
-  }
-</style>
+          ) : (
+            <p class="empty">No activity yet.</p>
+          )
+        }
+      </section>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { researchInterests } from '../data/site';
+---
+
+<BaseLayout title="Research • Eric Zhang">
+  <main class="page-main">
+    <section class="page-title card">
+      <p class="kicker">Research</p>
+      <h1>Research</h1>
+      <p>当前真实研究兴趣。后续有论文、项目或公开材料时再补充具体条目。</p>
+    </section>
+
+    <section class="card list-card">
+      <div class="section-title">
+        <h2>Research interests</h2>
+        <span>真实方向</span>
+      </div>
+      <div class="chips">
+        {researchInterests.map((item) => <span>{item}</span>)}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

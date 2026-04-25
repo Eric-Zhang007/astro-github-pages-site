@@ -1,0 +1,18 @@
+---
+import { profile, sitePath } from '../data/site';
+---
+
+<aside class="profile-card" id="about">
+  <div class="avatar" aria-hidden="true">E</div>
+  <h1>{profile.name}</h1>
+  <p class="location">{profile.location}</p>
+  <div class="links">
+    <a href={profile.github}>GitHub</a>
+    {profile.email && <a href={`mailto:${profile.email}`}>Email</a>}
+    <a href={sitePath('research/')}>Research</a>
+  </div>
+  <section>
+    <h2>About</h2>
+    <p>{profile.intro}</p>
+  </section>
+</aside>

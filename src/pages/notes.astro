@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { notes } from '../data/site';
+---
+
+<BaseLayout title="Notes • Eric Zhang">
+  <main class="page-main">
+    <section class="page-title card">
+      <p class="kicker">Notes</p>
+      <h1>Notes</h1>
+      <p>公开笔记会出现在这里。没有内容时保持为空状态。</p>
+    </section>
+
+    <section class="card list-card">
+      {
+        notes.length > 0 ? (
+          <div class="item-list">
+            {notes.map((note) => (
+              <a href={note.href}>
+                <h3>{note.title}</h3>
+                {note.summary && <p>{note.summary}</p>}
+                <time>{note.date}</time>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p class="empty">No notes published yet.</p>
+        )
+      }
+    </section>
+  </main>
+</BaseLayout>

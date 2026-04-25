@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "verify": "GITHUB_REPOSITORY=Eric-Zhang007/astro-github-pages-site astro build && node tests/verify-site.mjs",
     "astro": "astro"
   },
   "dependencies": {

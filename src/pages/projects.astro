@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { projects } from '../data/site';
+---
+
+<BaseLayout title="Projects • Eric Zhang">
+  <main class="page-main">
+    <section class="page-title card">
+      <p class="kicker">Projects</p>
+      <h1>Projects</h1>
+      <p>公开项目会出现在这里。没有内容时不虚构项目。</p>
+    </section>
+
+    <section class="card list-card">
+      {
+        projects.length > 0 ? (
+          <div class="item-list">
+            {projects.map((project) => (
+              <a href={project.href}>
+                <h3>{project.title}</h3>
+                {project.summary && <p>{project.summary}</p>}
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p class="empty">No projects published yet.</p>
+        )
+      }
+    </section>
+  </main>
+</BaseLayout>

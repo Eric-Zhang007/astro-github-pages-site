@@ -5,6 +5,13 @@ date: "2026-04-25"
 tags: ["JEPA", "self-supervised learning", "world model", "representation learning"]
 category: "Research"
 cover: "images/blog/jepa-cover.svg"
+arxivId: "2301.08243"
+paperUrl: "https://arxiv.org/abs/2301.08243"
+translationUrl: "https://hjfy.top/arxiv/2301.08243"
+figures:
+  - src: "images/blog/jepa-cover.svg"
+    alt: "JEPA representation space"
+    caption: "JEPA 用预测表示空间替代像素重建，适合连接 perception 与 world model。"
 draft: false
 ---
 

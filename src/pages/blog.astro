@@ -2,12 +2,18 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { sitePath } from '../data/site';
+import { blogCollections, collectionHref, slugify, tagHref } from '../data/blog';
 
 const blogPosts = (await getCollection('blog'))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const categories = Array.from(new Set(blogPosts.map((post) => post.data.category ?? 'Research')));
+const collectionSlugs = new Set(blogCollections.map((collection) => collection.slug));
+const postCollections = Array.from(new Set(blogPosts.map((post) => post.data.category ?? 'Research')))
+  .filter((category) => !collectionSlugs.has(slugify(category)))
+  .map((category) => ({ label: category, slug: slugify(category), href: `blog/collections/${slugify(category)}/` }));
+const collections = [...blogCollections, ...postCollections];
+const tags = Array.from(new Set(blogPosts.flatMap((post) => post.data.tags))).sort((a, b) => a.localeCompare(b));
 const totalPosts = blogPosts.length;
 ---
 
@@ -18,39 +24,36 @@ const totalPosts = blogPosts.length;
         <h1>Blog</h1>
         <p>Page 1 - Showing {totalPosts} of {totalPosts} posts</p>
       </div>
-      <a href={sitePath('blog/')}>View all posts by years →</a>
+      <a href={sitePath('blog/archive/')}>View all posts by years →</a>
     </section>
 
     <section class="blog-shell blog-shell-rightbar">
       <section class="post-grid" id="research">
         {
-          blogPosts.length > 0 ? (
-            blogPosts.map((post) => {
-              const slug = post.id.replace(/\.(md|mdx)$/, '');
-              const cover = post.data.cover ? sitePath(post.data.cover) : undefined;
-              return (
-                <a class="post-card image-post-card" href={sitePath(`blog/${slug}/`)}>
-                  <figure class="post-cover">
-                    {cover ? <img src={cover} alt={`${post.data.title} cover`} loading="lazy" /> : <div class="generated-cover">{post.data.title.slice(0, 2)}</div>}
-                  </figure>
-                  <div class="post-card-body">
-                    <div class="post-card-meta">
-                      <time>{post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
-                      <span>{post.data.category ?? 'Research'}</span>
-                    </div>
-                    <h2>{post.data.title}</h2>
-                    {post.data.description && <p>{post.data.description}</p>}
-                    <div class="tags">
-                      {post.data.tags.slice(0, 4).map((tag) => <span class="tag">{tag}</span>)}
-                    </div>
+          blogPosts.map((post) => {
+            const slug = post.id.replace(/\.(md|mdx)$/, '');
+            const cover = post.data.cover ? sitePath(post.data.cover) : undefined;
+            const category = post.data.category ?? 'Research';
+            return (
+              <a class="post-card image-post-card" href={sitePath(`blog/${slug}/`)}>
+                <figure class="post-cover">
+                  {cover ? <img src={cover} alt={`${post.data.title} cover`} loading="lazy" /> : <div class="generated-cover">{post.data.title.slice(0, 2)}</div>}
+                </figure>
+                <div class="post-card-body">
+                  <div class="post-card-meta">
+                    <time>{post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+                    <span>{category}</span>
                   </div>
-                  <span class="post-arrow" aria-hidden="true">›</span>
-                </a>
-              );
-            })
-          ) : (
-            <p class="empty">No blog posts yet.</p>
-          )
+                  <h2>{post.data.title}</h2>
+                  {post.data.description && <p>{post.data.description}</p>}
+                  <div class="tags">
+                    {post.data.tags.slice(0, 4).map((tag) => <span class="tag">{tag}</span>)}
+                  </div>
+                </div>
+                <span class="post-arrow" aria-hidden="true">›</span>
+              </a>
+            );
+          })
         }
       </section>
 
@@ -61,8 +64,7 @@ const totalPosts = blogPosts.length;
             <h2>Collections</h2>
           </div>
           <div class="sidebar-list">
-            {categories.map((category) => <a href={`#${category.toLowerCase().replaceAll(' ', '-')}`}>{category}<span>›</span></a>)}
-            <a href={sitePath('notes/')}>Notes<span>›</span></a>
+            {collections.map((collection) => <a href={sitePath(collection.href)}>{collection.label}<span>›</span></a>)}
           </div>
         </section>
 
@@ -72,7 +74,7 @@ const totalPosts = blogPosts.length;
             <h2>Tags</h2>
           </div>
           <div class="tags">
-            {Array.from(new Set(blogPosts.flatMap((post) => post.data.tags))).map((tag) => <span class="tag">{tag}</span>)}
+            {tags.map((tag) => <a class="tag" href={tagHref(tag)}>{tag}</a>)}
           </div>
         </section>
       </aside>

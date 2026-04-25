@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { sitePath } from '../../../data/site';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('blog')).filter((post) => !post.data.draft);
+  const years = Array.from(new Set(posts.map((post) => String(post.data.date.getFullYear()))));
+  return years.map((year) => ({ params: { year }, props: { year } }));
+}
+
+const { year } = Astro.props;
+const posts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft && String(post.data.date.getFullYear()) === year)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title={`${year} • Archive • Eric Zhang`}>
+  <main class="page-main archive-page">
+    <section class="page-title card compact-title">
+      <p class="kicker">Archive</p>
+      <h1>{year}</h1>
+    </section>
+
+    <section class="post-grid">
+      {posts.map((post) => {
+        const slug = post.id.replace(/\.(md|mdx)$/, '');
+        const cover = post.data.cover ? sitePath(post.data.cover) : undefined;
+        return (
+          <a class="post-card image-post-card" href={sitePath(`blog/${slug}/`)}>
+            <figure class="post-cover">
+              {cover ? <img src={cover} alt={`${post.data.title} cover`} loading="lazy" /> : <div class="generated-cover">{post.data.title.slice(0, 2)}</div>}
+            </figure>
+            <div class="post-card-body">
+              <div class="post-card-meta">
+                <time>{post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+                <span>{post.data.category ?? 'Research'}</span>
+              </div>
+              <h2>{post.data.title}</h2>
+              {post.data.description && <p>{post.data.description}</p>}
+            </div>
+            <span class="post-arrow" aria-hidden="true">›</span>
+          </a>
+        );
+      })}
+    </section>
+  </main>
+</BaseLayout>

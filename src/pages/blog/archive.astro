@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sitePath } from '../../data/site';
+
+const posts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const years = Array.from(new Set(posts.map((post) => post.data.date.getFullYear())));
+---
+
+<BaseLayout title="Archive • Eric Zhang">
+  <main class="page-main archive-page">
+    <section class="page-title card compact-title">
+      <p class="kicker">Archive</p>
+      <h1>Posts by years</h1>
+    </section>
+
+    <section class="archive-list card">
+      {years.map((year) => (
+        <section class="archive-year" id={`${year}`}>
+          <a class="archive-year-title" href={sitePath(`blog/archive/${year}/`)}>{year}</a>
+          <div class="archive-posts">
+            {posts.filter((post) => post.data.date.getFullYear() === year).map((post) => {
+              const slug = post.id.replace(/\.(md|mdx)$/, '');
+              return (
+                <a href={sitePath(`blog/${slug}/`)}>
+                  <time>{post.data.date.toISOString().slice(5, 10)}</time>
+                  <span>{post.data.title}</span>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      ))}
+    </section>
+  </main>
+</BaseLayout>

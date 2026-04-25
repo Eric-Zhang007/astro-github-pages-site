@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { sitePath } from '../../../data/site';
+import { blogCollections, slugify } from '../../../data/blog';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('blog')).filter((post) => !post.data.draft);
+  const postCollections = Array.from(new Set(posts.map((post) => post.data.category ?? 'Research')))
+    .map((category) => ({ label: category, slug: slugify(category) }));
+  const all = [...blogCollections.map(({ label, slug }) => ({ label, slug })), ...postCollections];
+  const unique = Array.from(new Map(all.map((item) => [item.slug, item])).values());
+  return unique.map((item) => ({ params: { collection: item.slug }, props: { collection: item } }));
+}
+
+const { collection } = Astro.props;
+const posts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft && slugify(post.data.category ?? 'Research') === collection.slug)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title={`${collection.label} • Collections • Eric Zhang`}>
+  <main class="page-main tag-page">
+    <section class="page-title card compact-title">
+      <p class="kicker">Collection</p>
+      <h1>{collection.label}</h1>
+    </section>
+
+    <section class="post-grid">
+      {posts.map((post) => {
+        const slug = post.id.replace(/\.(md|mdx)$/, '');
+        const cover = post.data.cover ? sitePath(post.data.cover) : undefined;
+        return (
+          <a class="post-card image-post-card" href={sitePath(`blog/${slug}/`)}>
+            <figure class="post-cover">
+              {cover ? <img src={cover} alt={`${post.data.title} cover`} loading="lazy" /> : <div class="generated-cover">{post.data.title.slice(0, 2)}</div>}
+            </figure>
+            <div class="post-card-body">
+              <div class="post-card-meta">
+                <time>{post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+                <span>{post.data.category ?? 'Research'}</span>
+              </div>
+              <h2>{post.data.title}</h2>
+              {post.data.description && <p>{post.data.description}</p>}
+            </div>
+            <span class="post-arrow" aria-hidden="true">›</span>
+          </a>
+        );
+      })}
+    </section>
+  </main>
+</BaseLayout>

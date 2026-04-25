@@ -9,6 +9,16 @@ const entrySchema = z.object({
   tags: z.array(z.string()).default([]),
   category: z.string().optional(),
   cover: z.string().optional(),
+  arxivId: z.string().optional(),
+  paperUrl: z.string().url().optional(),
+  translationUrl: z.string().url().optional(),
+  codeUrl: z.string().url().optional(),
+  figures: z.array(z.object({
+    src: z.string(),
+    alt: z.string().optional(),
+    caption: z.string().optional(),
+  })).default([]),
+  comments: z.boolean().default(true),
   draft: z.boolean().default(false),
 });
 

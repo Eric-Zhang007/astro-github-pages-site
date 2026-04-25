@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { comments, tagHref } from '../../data/blog';
 import { sitePath } from '../../data/site';
 
 export async function getStaticPaths() {
@@ -16,6 +17,9 @@ const { Content, headings } = await render(post);
 const cover = post.data.cover ? sitePath(post.data.cover) : undefined;
 const toc = headings.filter((heading) => heading.depth > 1 && heading.depth < 4);
 const readMinutes = Math.max(1, Math.ceil(post.body.split(/\s+/).filter(Boolean).length / 320));
+const arxivUrl = post.data.paperUrl ?? (post.data.arxivId ? `https://arxiv.org/abs/${post.data.arxivId}` : undefined);
+const translationUrl = post.data.translationUrl ?? (post.data.arxivId ? `https://hjfy.top/arxiv/${post.data.arxivId}` : undefined);
+const showComments = post.data.comments && comments.walineServerURL;
 ---
 
 <BaseLayout title={`${post.data.title} • Eric Zhang`} description={post.data.description}>
@@ -28,8 +32,9 @@ const readMinutes = Math.max(1, Math.ceil(post.body.split(/\s+/).filter(Boolean)
         <h1>{post.data.title}</h1>
         <div class="article-meta">
           <time>{post.data.date.toISOString().slice(0, 10)}</time>
+          {post.data.updated && <span>Update {post.data.updated.toISOString().slice(0, 10)}</span>}
           <span>{readMinutes} min read</span>
-          {post.data.tags.map((tag) => <span>{tag}</span>)}
+          {post.data.tags.map((tag) => <a href={tagHref(tag)}>{tag}</a>)}
         </div>
         {post.data.description && <p class="article-description">{post.data.description}</p>}
         {
@@ -40,22 +45,57 @@ const readMinutes = Math.max(1, Math.ceil(post.body.split(/\s+/).filter(Boolean)
           )
         }
       </header>
+
+      {
+        (arxivUrl || translationUrl || post.data.codeUrl) && (
+          <section class="paper-card">
+            <div class="paper-links">
+              {arxivUrl && <a href={arxivUrl} target="_blank" rel="noreferrer"><span>Arxiv ID</span>{post.data.arxivId ?? 'Paper'}</a>}
+              {translationUrl && <a class="translation-link" href={translationUrl} target="_blank" rel="noreferrer"><span>幻觉翻译</span>{post.data.arxivId ?? 'Open'}</a>}
+              {post.data.codeUrl && <a href={post.data.codeUrl} target="_blank" rel="noreferrer"><span>Code</span>GitHub</a>}
+            </div>
+          </section>
+        )
+      }
+
       <div class="article-body">
         <Content />
       </div>
+
+      {
+        post.data.figures.length > 0 && (
+          <section class="paper-figures">
+            {post.data.figures.map((figure) => (
+              <figure>
+                <img src={sitePath(figure.src)} alt={figure.alt ?? ''} loading="lazy" />
+                {figure.caption && <figcaption>{figure.caption}</figcaption>}
+              </figure>
+            ))}
+          </section>
+        )
+      }
+
+      {showComments && <div id="waline" class="comments-panel"></div>}
+      {
+        showComments && (
+          <script define:vars={{ serverURL: comments.walineServerURL }}>
+            import('https://unpkg.com/@waline/client@v3/dist/waline.js').then(({ init }) => {
+              init({ el: '#waline', serverURL, dark: 'html[data-theme="dark"]' });
+            });
+          </script>
+        )
+      }
     </article>
 
     <aside class="toc-panel card" aria-label="Table of contents">
       <p class="toc-title">TABLE OF CONTENTS</p>
       {
-        toc.length > 0 ? (
+        toc.length > 0 && (
           <nav class="toc-nav">
             {toc.map((heading) => (
               <a class={`toc-depth-${heading.depth}`} href={`#${heading.slug}`}>{heading.text}</a>
             ))}
           </nav>
-        ) : (
-          <p class="toc-empty">No headings.</p>
         )
       }
     </aside>

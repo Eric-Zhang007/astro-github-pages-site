@@ -1,13 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { notes } from '../data/site';
+import PageHeader from '../components/PageHeader.astro';
+import { notes, sitePath } from '../data/site';
 ---
 
 <BaseLayout title="Notes • Eric Zhang">
   <main class="page-main">
-    <section class="page-title card">
-      <h1>Notes</h1>
-    </section>
+    <PageHeader title="Notes" count={notes.length} itemLabel="notes" actionLabel="View all notes →" actionHref={sitePath('notes/')} />
 
     <section class="card list-card">
       {

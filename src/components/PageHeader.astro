@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  count?: number;
+  itemLabel?: string;
+  actionLabel?: string;
+  actionHref?: string;
+}
+
+const { title, count, itemLabel = 'items', actionLabel, actionHref } = Astro.props;
+const showMeta = typeof count === 'number';
+---
+
+<section class="page-title card page-header">
+  <div>
+    <h1>{title}</h1>
+    {showMeta && <p>Page 1 - Showing {count} of {count} {itemLabel}</p>}
+  </div>
+  {actionHref && actionLabel && <a href={actionHref}>{actionLabel}</a>}
+</section>

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
 import { sitePath } from '../data/site';
 import { blogCollections, collectionHref, slugify, tagHref } from '../data/blog';
 
@@ -19,13 +20,7 @@ const totalPosts = blogPosts.length;
 
 <BaseLayout title="Blog • Eric Zhang">
   <main class="blog-index compact-blog-index">
-    <section class="page-title card blog-page-title">
-      <div>
-        <h1>Blog</h1>
-        <p>Page 1 - Showing {totalPosts} of {totalPosts} posts</p>
-      </div>
-      <a href={sitePath('blog/archive/')}>View all posts by years →</a>
-    </section>
+    <PageHeader title="Blog" count={totalPosts} itemLabel="posts" actionLabel="View all posts by years →" actionHref={sitePath('blog/archive/')} />
 
     <section class="blog-shell blog-shell-rightbar">
       <section class="post-grid" id="research">

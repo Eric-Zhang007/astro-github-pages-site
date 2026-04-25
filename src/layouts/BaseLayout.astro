@@ -11,6 +11,14 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
 
 <html lang="zh-CN">
   <head>
+    <style is:inline>
+      html { background: #0b0b10; color: #f4f6fb; }
+      body { margin: 0; min-height: 100vh; background: #0b0b10; color: #f4f6fb; }
+      a { color: inherit; }
+    </style>
+    <script is:inline>
+      document.documentElement.classList.add('is-loading');
+    </script>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href={sitePath('favicon.svg')} />
     <link rel="icon" href={sitePath('favicon.ico')} />
@@ -30,32 +38,77 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
 
       <slot />
     </div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
     <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="cursor-trail" aria-hidden="true"></div>
     <div class="particle-layer" aria-hidden="true"></div>
     <script>
+      const root = document.documentElement;
+      root.classList.remove('is-loading');
+      root.classList.add('is-ready');
+
+      const ring = document.querySelector('.cursor-ring');
+      const dot = document.querySelector('.cursor-dot');
       const glow = document.querySelector('.cursor-glow');
+      const trailLayer = document.querySelector('.cursor-trail');
       const particleLayer = document.querySelector('.particle-layer');
       const progress = document.querySelector('.read-progress');
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      let pointerX = window.innerWidth / 2;
+      let pointerY = window.innerHeight / 2;
+      let ringX = pointerX;
+      let ringY = pointerY;
 
-      if (!reduceMotion && glow instanceof HTMLElement) {
+      if (!reduceMotion && canHover && ring instanceof HTMLElement && dot instanceof HTMLElement && glow instanceof HTMLElement) {
+        root.classList.add('has-custom-cursor');
+        const moveCursor = () => {
+          ringX += (pointerX - ringX) * 0.22;
+          ringY += (pointerY - ringY) * 0.22;
+          ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+          dot.style.transform = `translate3d(${pointerX}px, ${pointerY}px, 0) translate(-50%, -50%)`;
+          glow.style.transform = `translate3d(${pointerX}px, ${pointerY}px, 0) translate(-50%, -50%)`;
+          requestAnimationFrame(moveCursor);
+        };
+        moveCursor();
+
         window.addEventListener('pointermove', (event) => {
-          glow.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+          pointerX = event.clientX;
+          pointerY = event.clientY;
+          if (trailLayer instanceof HTMLElement) {
+            const trail = document.createElement('span');
+            trail.style.left = `${pointerX}px`;
+            trail.style.top = `${pointerY}px`;
+            trailLayer.appendChild(trail);
+            window.setTimeout(() => trail.remove(), 520);
+          }
         }, { passive: true });
+
+        document.querySelectorAll('a, button, [role="button"]').forEach((item) => {
+          item.addEventListener('pointerenter', () => root.classList.add('cursor-hover'));
+          item.addEventListener('pointerleave', () => root.classList.remove('cursor-hover'));
+        });
       }
 
       if (!reduceMotion && particleLayer instanceof HTMLElement) {
         window.addEventListener('click', (event) => {
-          for (let index = 0; index < 10; index += 1) {
+          const ripple = document.createElement('i');
+          ripple.style.left = `${event.clientX}px`;
+          ripple.style.top = `${event.clientY}px`;
+          particleLayer.appendChild(ripple);
+          window.setTimeout(() => ripple.remove(), 760);
+
+          for (let index = 0; index < 14; index += 1) {
             const particle = document.createElement('span');
-            const angle = (Math.PI * 2 * index) / 10;
-            const distance = 28 + Math.random() * 34;
+            const angle = (Math.PI * 2 * index) / 14;
+            const distance = 42 + Math.random() * 46;
             particle.style.left = `${event.clientX}px`;
             particle.style.top = `${event.clientY}px`;
             particle.style.setProperty('--dx', `${Math.cos(angle) * distance}px`);
             particle.style.setProperty('--dy', `${Math.sin(angle) * distance}px`);
             particleLayer.appendChild(particle);
-            window.setTimeout(() => particle.remove(), 720);
+            window.setTimeout(() => particle.remove(), 760);
           }
         });
       }
@@ -113,6 +166,12 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
   }
 
   * { box-sizing: border-box; }
+  html.is-loading {
+    background: #0b0b10;
+    color: #f4f6fb;
+  }
+  html.has-custom-cursor,
+  html.has-custom-cursor * { cursor: none !important; }
 
   body {
     margin: 0;
@@ -376,14 +435,14 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
 
   .blog-index { display: grid; gap: 22px; }
   .compact-blog-index { gap: 18px; }
-  .blog-page-title {
+  .page-header {
     display: flex;
     justify-content: space-between;
     align-items: end;
     gap: 18px;
   }
-  .blog-page-title p { margin: 10px 0 0; font-size: 0.94rem; }
-  .blog-page-title a { color: var(--accent); font-size: 0.9rem; font-weight: 500; }
+  .page-header p { margin: 10px 0 0; font-size: 0.94rem; }
+  .page-header a { color: var(--accent); font-size: 0.9rem; font-weight: 500; }
   .blog-shell { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 22px; align-items: start; }
   .blog-shell-rightbar { grid-template-columns: minmax(0, 1fr) 330px; }
   .right-sidebar { display: grid; gap: 18px; position: sticky; top: 98px; }
@@ -563,27 +622,86 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
     transform-origin: left;
     background: linear-gradient(90deg, var(--accent), #b8efff);
   }
-  .cursor-glow {
+  .cursor-ring,
+  .cursor-dot,
+  .cursor-glow,
+  .cursor-trail,
+  .particle-layer {
     position: fixed;
-    left: -120px;
-    top: -120px;
-    z-index: 20;
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
+    inset: 0;
+    z-index: 9999;
     pointer-events: none;
-    background: radial-gradient(circle, rgba(128, 189, 215, 0.38), rgba(154, 138, 255, 0.14) 42%, transparent 70%);
-    mix-blend-mode: plus-lighter;
-    transition: transform 70ms linear;
   }
-  .particle-layer { position: fixed; inset: 0; z-index: 999; pointer-events: none; overflow: hidden; }
+  .cursor-ring,
+  .cursor-dot,
+  .cursor-glow { left: 0; top: 0; right: auto; bottom: auto; opacity: 0; }
+  .has-custom-cursor .cursor-ring,
+  .has-custom-cursor .cursor-dot,
+  .has-custom-cursor .cursor-glow { opacity: 1; }
+  .cursor-ring {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(157, 228, 255, 0.78);
+    border-radius: 50%;
+    box-shadow: 0 0 18px rgba(128, 189, 215, 0.45), inset 0 0 14px rgba(128, 189, 215, 0.18);
+    transition: width 160ms ease, height 160ms ease, border-color 160ms ease, background 160ms ease;
+  }
+  .cursor-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #e8fbff;
+    box-shadow: 0 0 18px rgba(157, 228, 255, 0.95);
+  }
+  .cursor-glow {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(128, 189, 215, 0.22), rgba(154, 138, 255, 0.10) 42%, transparent 70%);
+    mix-blend-mode: plus-lighter;
+  }
+  .cursor-hover .cursor-ring {
+    width: 56px;
+    height: 56px;
+    border-color: rgba(255, 255, 255, 0.95);
+    background: rgba(128, 189, 215, 0.1);
+  }
+  .cursor-trail,
+  .particle-layer { overflow: hidden; }
+  .cursor-trail span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    translate: -50% -50%;
+    background: rgba(157, 228, 255, 0.42);
+    box-shadow: 0 0 16px rgba(157, 228, 255, 0.42);
+    animation: cursor-trail 520ms ease-out forwards;
+  }
   .particle-layer span {
     position: absolute;
-    width: 9px;
-    height: 9px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent-strong), #ffffff);
-    animation: particle-pop 720ms ease-out forwards;
+    translate: -50% -50%;
+    background: linear-gradient(135deg, #ffffff, var(--accent-strong));
+    box-shadow: 0 0 18px rgba(157, 228, 255, 0.8);
+    animation: particle-pop 760ms ease-out forwards;
+  }
+  .particle-layer i {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(157, 228, 255, 0.8);
+    border-radius: 50%;
+    translate: -50% -50%;
+    animation: cursor-ripple 760ms ease-out forwards;
+  }
+  @keyframes cursor-trail {
+    to { transform: scale(0.2); opacity: 0; }
+  }
+  @keyframes cursor-ripple {
+    to { transform: scale(6); opacity: 0; }
   }
   @keyframes particle-pop {
     to { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
@@ -596,7 +714,7 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
     .blog-shell-rightbar,
     .post-card,
     .article-layout { grid-template-columns: 1fr; }
-    .blog-page-title { align-items: start; flex-direction: column; }
+    .page-header { align-items: start; flex-direction: column; }
     .profile-card,
     .right-sidebar,
     .toc-panel { position: static; }
@@ -630,7 +748,10 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .cursor-ring,
+    .cursor-dot,
     .cursor-glow,
+    .cursor-trail,
     .particle-layer { display: none; }
     *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
   }

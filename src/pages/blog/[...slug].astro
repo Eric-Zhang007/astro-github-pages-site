@@ -12,25 +12,52 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+const cover = post.data.cover ? sitePath(post.data.cover) : undefined;
+const toc = headings.filter((heading) => heading.depth > 1 && heading.depth < 4);
+const readMinutes = Math.max(1, Math.ceil(post.body.split(/\s+/).filter(Boolean).length / 320));
 ---
 
 <BaseLayout title={`${post.data.title} • Eric Zhang`} description={post.data.description}>
-  <main class="article-page">
+  <div class="read-progress" aria-hidden="true"></div>
+  <main class="article-layout">
     <article class="article card">
       <a class="back-link" href={sitePath('blog/')}>← Back to Blog</a>
-      <header>
-        <p class="kicker">Blog</p>
+      <header class="article-header">
+        <p class="kicker">{post.data.category ?? 'Blog'}</p>
         <h1>{post.data.title}</h1>
         <div class="article-meta">
           <time>{post.data.date.toISOString().slice(0, 10)}</time>
+          <span>{readMinutes} min read</span>
           {post.data.tags.map((tag) => <span>{tag}</span>)}
         </div>
         {post.data.description && <p class="article-description">{post.data.description}</p>}
+        {
+          cover && (
+            <figure class="article-cover">
+              <img src={cover} alt={`${post.data.title} cover`} />
+            </figure>
+          )
+        }
       </header>
       <div class="article-body">
         <Content />
       </div>
     </article>
+
+    <aside class="toc-panel card" aria-label="Table of contents">
+      <p class="toc-title">TABLE OF CONTENTS</p>
+      {
+        toc.length > 0 ? (
+          <nav class="toc-nav">
+            {toc.map((heading) => (
+              <a class={`toc-depth-${heading.depth}`} href={`#${heading.slug}`}>{heading.text}</a>
+            ))}
+          </nav>
+        ) : (
+          <p class="toc-empty">No headings.</p>
+        )
+      }
+    </aside>
   </main>
 </BaseLayout>

@@ -5,7 +5,10 @@ const entrySchema = z.object({
   title: z.string(),
   description: z.string().optional(),
   date: z.coerce.date(),
+  updated: z.coerce.date().optional(),
   tags: z.array(z.string()).default([]),
+  category: z.string().optional(),
+  cover: z.string().optional(),
   draft: z.boolean().default(false),
 });
 

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">JEPA cover</title>
+  <desc id="desc">Abstract representation learning cover with masked patches and latent space nodes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="0.48" stop-color="#19314a"/>
+      <stop offset="1" stop-color="#8bc7d9"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="34%" cy="26%" r="70%">
+      <stop offset="0" stop-color="#b8f4ff" stop-opacity="0.7"/>
+      <stop offset="0.45" stop-color="#6aa6ff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#0b1020" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <rect width="1200" height="720" fill="url(#grid)"/>
+  <circle cx="388" cy="194" r="310" fill="url(#glow)" filter="url(#blur)"/>
+  <g opacity="0.96">
+    <rect x="112" y="112" width="420" height="300" rx="34" fill="#ffffff" fill-opacity="0.1" stroke="#ffffff" stroke-opacity="0.22"/>
+    <g fill="#ffffff" fill-opacity="0.15">
+      <rect x="152" y="152" width="80" height="58" rx="14"/>
+      <rect x="250" y="152" width="80" height="58" rx="14"/>
+      <rect x="348" y="152" width="144" height="58" rx="14" fill-opacity="0.34"/>
+      <rect x="152" y="228" width="178" height="58" rx="14"/>
+      <rect x="348" y="228" width="80" height="58" rx="14" fill-opacity="0.34"/>
+      <rect x="152" y="304" width="80" height="58" rx="14" fill-opacity="0.34"/>
+      <rect x="250" y="304" width="242" height="58" rx="14"/>
+    </g>
+  </g>
+  <g stroke="#d8fbff" stroke-opacity="0.62" stroke-width="3" fill="none">
+    <path d="M540 264C634 210 698 214 790 278"/>
+    <path d="M540 316C650 360 696 364 804 334"/>
+    <path d="M806 282C866 244 918 246 978 292"/>
+    <path d="M806 338C878 394 932 396 1012 346"/>
+  </g>
+  <g fill="#d8fbff">
+    <circle cx="540" cy="264" r="10"/>
+    <circle cx="540" cy="316" r="10"/>
+    <circle cx="806" cy="282" r="13"/>
+    <circle cx="806" cy="338" r="13"/>
+    <circle cx="982" cy="292" r="10"/>
+    <circle cx="1012" cy="346" r="10"/>
+  </g>
+  <text x="112" y="548" fill="#ffffff" font-size="74" font-family="Inter,Arial,sans-serif" font-weight="800" letter-spacing="-3">JEPA</text>
+  <text x="112" y="604" fill="#d8fbff" font-size="28" font-family="Inter,Arial,sans-serif">Predicting abstract representations, not pixels.</text>
+</svg>

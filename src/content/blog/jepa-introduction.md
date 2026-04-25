@@ -3,6 +3,8 @@ title: "JEPA：一种面向世界模型的自监督学习思路"
 description: "JEPA 不追求像素级重建，而是在表示空间中预测被遮挡区域，为理解世界模型、自监督表征学习和具身智能提供了一个简洁视角。"
 date: "2026-04-25"
 tags: ["JEPA", "self-supervised learning", "world model", "representation learning"]
+category: "Research"
+cover: "images/blog/jepa-cover.svg"
 draft: false
 ---
 

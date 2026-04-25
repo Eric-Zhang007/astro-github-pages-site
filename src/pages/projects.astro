@@ -1,26 +1,34 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
+import SectionSidebar from '../components/SectionSidebar.astro';
 import { projects, sitePath } from '../data/site';
+import { sectionCollections, uniqueTags } from '../data/blog';
+
+const tags = uniqueTags(projects);
 ---
 
 <BaseLayout title="Projects • Eric Zhang">
   <main class="page-main">
     <PageHeader title="Projects" count={projects.length} itemLabel="projects" actionLabel="View all projects →" actionHref={sitePath('projects/')} />
 
-    <section class="card list-card">
-      {
-        projects.length > 0 ? (
-          <div class="item-list">
-            {projects.map((project) => (
-              <a href={project.href}>
-                <h3>{project.title}</h3>
-                {project.summary && <p>{project.summary}</p>}
-              </a>
-            ))}
-          </div>
-        ) : null
-      }
+    <section class="blog-shell blog-shell-rightbar">
+      <section class="card list-card">
+        {
+          projects.length > 0 ? (
+            <div class="item-list">
+              {projects.map((project) => (
+                <a href={project.href}>
+                  <h3>{project.title}</h3>
+                  {project.summary && <p>{project.summary}</p>}
+                </a>
+              ))}
+            </div>
+          ) : null
+        }
+      </section>
+
+      <SectionSidebar label="Projects" collections={sectionCollections.projects} tags={tags} />
     </section>
   </main>
 </BaseLayout>

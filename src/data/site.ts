@@ -52,6 +52,7 @@ export const projects: Array<{
   title: string;
   href: string;
   summary?: string;
+  tags?: string[];
 }> = [];
 
 export const links = [

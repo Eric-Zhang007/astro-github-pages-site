@@ -1,27 +1,42 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
-import { notes, sitePath } from '../data/site';
+import SectionSidebar from '../components/SectionSidebar.astro';
+import { sitePath } from '../data/site';
+import { sectionCollections, uniqueTags } from '../data/blog';
+
+const notePosts = (await getCollection('notes'))
+  .filter((note) => !note.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const tags = uniqueTags(notePosts);
 ---
 
 <BaseLayout title="Notes • Eric Zhang">
   <main class="page-main">
-    <PageHeader title="Notes" count={notes.length} itemLabel="notes" actionLabel="View all notes →" actionHref={sitePath('notes/')} />
+    <PageHeader title="Notes" count={notePosts.length} itemLabel="notes" actionLabel="View all notes →" actionHref={sitePath('notes/')} />
 
-    <section class="card list-card">
-      {
-        notes.length > 0 ? (
-          <div class="item-list">
-            {notes.map((note) => (
-              <a href={note.href}>
-                <h3>{note.title}</h3>
-                {note.summary && <p>{note.summary}</p>}
-                <time>{note.date}</time>
-              </a>
-            ))}
-          </div>
-        ) : null
-      }
+    <section class="blog-shell blog-shell-rightbar">
+      <section class="card list-card">
+        {
+          notePosts.length > 0 ? (
+            <div class="item-list">
+              {notePosts.map((note) => {
+                const slug = note.id.replace(/\.(md|mdx)$/, '');
+                return (
+                  <a href={sitePath(`notes/${slug}/`)}>
+                    <h3>{note.data.title}</h3>
+                    {note.data.description && <p>{note.data.description}</p>}
+                    <time>{note.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+                  </a>
+                );
+              })}
+            </div>
+          ) : null
+        }
+      </section>
+
+      <SectionSidebar label="Notes" collections={sectionCollections.notes} tags={tags} />
     </section>
   </main>
 </BaseLayout>

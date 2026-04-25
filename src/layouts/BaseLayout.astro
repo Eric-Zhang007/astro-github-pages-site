@@ -81,7 +81,7 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
             trail.style.left = `${pointerX}px`;
             trail.style.top = `${pointerY}px`;
             trailLayer.appendChild(trail);
-            window.setTimeout(() => trail.remove(), 520);
+            window.setTimeout(() => trail.remove(), 700);
           }
         }, { passive: true });
 
@@ -638,45 +638,56 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
   .has-custom-cursor .cursor-ring,
   .has-custom-cursor .cursor-dot,
   .has-custom-cursor .cursor-glow { opacity: 1; }
+  .has-custom-cursor,
+  .has-custom-cursor * { cursor: none !important; }
   .cursor-ring {
-    width: 36px;
-    height: 36px;
-    border: 1px solid rgba(157, 228, 255, 0.78);
+    width: 54px;
+    height: 54px;
+    border: 2px solid rgba(255, 255, 255, 0.96);
     border-radius: 50%;
-    box-shadow: 0 0 18px rgba(128, 189, 215, 0.45), inset 0 0 14px rgba(128, 189, 215, 0.18);
-    transition: width 160ms ease, height 160ms ease, border-color 160ms ease, background 160ms ease;
+    background:
+      radial-gradient(circle at 50% 50%, transparent 54%, rgba(157, 228, 255, 0.22) 56%, transparent 72%);
+    box-shadow:
+      0 0 0 1px rgba(128, 189, 215, 0.65),
+      0 0 28px rgba(157, 228, 255, 0.9),
+      inset 0 0 20px rgba(157, 228, 255, 0.34);
+    transition: width 160ms ease, height 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
   }
   .cursor-dot {
-    width: 7px;
-    height: 7px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    background: #e8fbff;
-    box-shadow: 0 0 18px rgba(157, 228, 255, 0.95);
+    background: #ffffff;
+    box-shadow: 0 0 22px rgba(157, 228, 255, 1), 0 0 44px rgba(128, 189, 215, 0.85);
   }
   .cursor-glow {
-    width: 220px;
-    height: 220px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(128, 189, 215, 0.22), rgba(154, 138, 255, 0.10) 42%, transparent 70%);
+    background: radial-gradient(circle, rgba(128, 189, 215, 0.34), rgba(154, 138, 255, 0.18) 42%, transparent 70%);
     mix-blend-mode: plus-lighter;
   }
   .cursor-hover .cursor-ring {
-    width: 56px;
-    height: 56px;
-    border-color: rgba(255, 255, 255, 0.95);
-    background: rgba(128, 189, 215, 0.1);
+    width: 78px;
+    height: 78px;
+    border-color: rgba(255, 231, 184, 1);
+    background: rgba(128, 189, 215, 0.2);
+    box-shadow:
+      0 0 0 1px rgba(255, 231, 184, 0.95),
+      0 0 34px rgba(255, 231, 184, 0.9),
+      inset 0 0 24px rgba(157, 228, 255, 0.5);
   }
   .cursor-trail,
   .particle-layer { overflow: hidden; }
   .cursor-trail span {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     translate: -50% -50%;
-    background: rgba(157, 228, 255, 0.42);
-    box-shadow: 0 0 16px rgba(157, 228, 255, 0.42);
-    animation: cursor-trail 520ms ease-out forwards;
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 0 22px rgba(157, 228, 255, 0.95), 0 0 38px rgba(128, 189, 215, 0.7);
+    animation: cursor-trail 700ms ease-out forwards;
   }
   .particle-layer span {
     position: absolute;

@@ -1,0 +1,42 @@
+---
+import { sitePath } from '../data/site';
+import { tagHref, type OwnerCollection } from '../data/blog';
+
+interface Props {
+  label: string;
+  collections?: OwnerCollection[];
+  tags?: string[];
+}
+
+const { label, collections = [], tags = [] } = Astro.props;
+---
+
+<aside class="right-sidebar" aria-label={`${label} sidebar`}>
+  <section class="sidebar-section card">
+    <div class="sidebar-heading">
+      <span aria-hidden="true">▧</span>
+      <h2>Collections</h2>
+    </div>
+    {
+      collections.length > 0 && (
+        <div class="sidebar-list">
+          {collections.map((collection) => <a href={sitePath(collection.href)}>{collection.label}<span>›</span></a>)}
+        </div>
+      )
+    }
+  </section>
+
+  <section class="sidebar-section card">
+    <div class="sidebar-heading">
+      <span aria-hidden="true">#</span>
+      <h2>Tags</h2>
+    </div>
+    {
+      tags.length > 0 && (
+        <div class="tags">
+          {tags.map((tag) => <a class="tag" href={tagHref(tag)}>{tag}</a>)}
+        </div>
+      )
+    }
+  </section>
+</aside>

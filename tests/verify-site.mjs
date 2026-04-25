@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const root = new URL('..', import.meta.url).pathname;
@@ -11,6 +11,9 @@ const requiredPages = [
   'projects/index.html',
   'links/index.html',
   'about/index.html',
+  'blog/jepa-introduction/index.html',
+  'tags/JEPA/index.html',
+  'tags/world model/index.html',
 ];
 
 for (const page of requiredPages) {
@@ -20,9 +23,17 @@ for (const page of requiredPages) {
   }
 }
 
-const homepage = readFileSync(join(dist, 'index.html'), 'utf8');
-const blog = readFileSync(join(dist, 'blog/index.html'), 'utf8');
-const research = readFileSync(join(dist, 'research/index.html'), 'utf8');
+const read = (page) => readFileSync(join(dist, page), 'utf8');
+const homepage = read('index.html');
+const blog = read('blog/index.html');
+const research = read('research/index.html');
+const notes = read('notes/index.html');
+const projects = read('projects/index.html');
+const article = read('blog/jepa-introduction/index.html');
+const css = readdirSync(join(dist, '_astro'))
+  .filter((file) => file.endsWith('.css'))
+  .map((file) => readFileSync(join(dist, '_astro', file), 'utf8'))
+  .join('\n');
 
 const forbidden = [
   'Reading notes on world models',
@@ -33,38 +44,55 @@ const forbidden = [
   'Local PDFs',
   'Notes to write',
   'hello@example.com',
-  '491',
-  '41',
-  '∞',
+  'No blog posts yet',
+  'No activity yet',
+  'No projects yet',
+  'No notes yet',
+  '后续补充',
+  '会出现在这里',
+  '没有内容时',
+  '真实方向',
+  '真实经历',
 ];
 
 for (const text of forbidden) {
-  if (homepage.includes(text) || blog.includes(text) || research.includes(text)) {
-    throw new Error(`Found placeholder/fake content: ${text}`);
+  for (const [name, html] of Object.entries({ homepage, blog, research, notes, projects, article })) {
+    if (html.includes(text)) {
+      throw new Error(`Found placeholder/fake content in ${name}: ${text}`);
+    }
   }
 }
 
-const expectedHomepage = [
-  'href="/astro-github-pages-site/blog/"',
-  'href="/astro-github-pages-site/research/"',
-  'No blog posts yet',
-  'No activity yet',
-  'Research interests',
-  'Education',
-];
+const pageChecks = {
+  homepage: ['href="/astro-github-pages-site/blog/"', 'href="/astro-github-pages-site/research/"'],
+  blog: ['Collections', 'Tags', 'href="/astro-github-pages-site/tags/JEPA/"', 'View all posts by years', 'jepa-introduction'],
+  research: ['Page 1 - Showing 5 of 5 interests', 'Collections', 'Tags', 'Research interests'],
+  notes: ['Page 1 - Showing 0 of 0 notes', 'Collections', 'Tags'],
+  projects: ['Page 1 - Showing 0 of 0 projects', 'Collections', 'Tags'],
+  article: ['toc-panel', 'Comments', 'Arxiv ID', '幻觉翻译', 'paper-figure-link'],
+};
 
-for (const text of expectedHomepage) {
-  if (!homepage.includes(text)) {
-    throw new Error(`Homepage missing expected real-state content: ${text}`);
+for (const [name, needles] of Object.entries(pageChecks)) {
+  const html = { homepage, blog, research, notes, projects, article }[name];
+  for (const needle of needles) {
+    if (!html.includes(needle)) {
+      throw new Error(`${name} missing expected content: ${needle}`);
+    }
   }
 }
 
-if (!blog.includes('No blog posts yet')) {
-  throw new Error('Blog page should show a truthful empty state when there are no posts.');
+for (const needle of ['cursor-ring', 'cursor-dot', 'cursor-trail', 'cursor-ripple', 'cursor-hover', 'has-custom-cursor *{cursor:none!important}']) {
+  if (!article.includes(needle) && !css.includes(needle)) {
+    throw new Error(`Missing visible cursor marker: ${needle}`);
+  }
 }
 
-if (!research.includes('World models')) {
-  throw new Error('Research page should include the real research interests.');
+if (blog.includes('blog/collections/research') || blog.includes('blog/collections/notes')) {
+  throw new Error('Blog collections still point to Research/Notes as fake collections.');
+}
+
+if (research.includes('href="/astro-github-pages-site/tags/World%20models')) {
+  throw new Error('Research tags are not article-derived; research interests should not become tag links.');
 }
 
 console.log('Site verification passed');

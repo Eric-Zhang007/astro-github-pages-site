@@ -2,20 +2,15 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { sitePath } from '../../../data/site';
-import { blogCollections, slugify } from '../../../data/blog';
+import { sectionCollections, slugify } from '../../../data/blog';
 
 export async function getStaticPaths() {
-  const posts = (await getCollection('blog')).filter((post) => !post.data.draft);
-  const postCollections = Array.from(new Set(posts.map((post) => post.data.category ?? 'Research')))
-    .map((category) => ({ label: category, slug: slugify(category) }));
-  const all = [...blogCollections.map(({ label, slug }) => ({ label, slug })), ...postCollections];
-  const unique = Array.from(new Map(all.map((item) => [item.slug, item])).values());
-  return unique.map((item) => ({ params: { collection: item.slug }, props: { collection: item } }));
+  return sectionCollections.blog.map((collection) => ({ params: { collection: collection.slug }, props: { collection } }));
 }
 
 const { collection } = Astro.props;
 const posts = (await getCollection('blog'))
-  .filter((post) => !post.data.draft && slugify(post.data.category ?? 'Research') === collection.slug)
+  .filter((post) => !post.data.draft && post.data.category && slugify(post.data.category) === collection.slug)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
@@ -38,7 +33,7 @@ const posts = (await getCollection('blog'))
             <div class="post-card-body">
               <div class="post-card-meta">
                 <time>{post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
-                <span>{post.data.category ?? 'Research'}</span>
+                {post.data.category && <span>{post.data.category}</span>}
               </div>
               <h2>{post.data.title}</h2>
               {post.data.description && <p>{post.data.description}</p>}

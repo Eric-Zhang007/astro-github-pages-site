@@ -1,21 +1,29 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { researchInterests } from '../data/site';
+import PageHeader from '../components/PageHeader.astro';
+import SectionSidebar from '../components/SectionSidebar.astro';
+import { researchInterests, sitePath } from '../data/site';
+import { sectionCollections } from '../data/blog';
+
+const researchItems = researchInterests.map((item) => ({ title: item }));
+const tags: string[] = [];
 ---
 
 <BaseLayout title="Research • Eric Zhang">
   <main class="page-main">
-    <section class="page-title card">
-      <h1>Research</h1>
-    </section>
+    <PageHeader title="Research" count={researchItems.length} itemLabel="interests" actionLabel="View all research →" actionHref={sitePath('research/')} />
 
-    <section class="card list-card">
-      <div class="section-title">
-        <h2>Research interests</h2>
-      </div>
-      <div class="chips">
-        {researchInterests.map((item) => <span>{item}</span>)}
-      </div>
+    <section class="blog-shell blog-shell-rightbar">
+      <section class="card list-card">
+        <div class="section-title">
+          <h2>Research interests</h2>
+        </div>
+        <div class="chips">
+          {researchInterests.map((item) => <span>{item}</span>)}
+        </div>
+      </section>
+
+      <SectionSidebar label="Research" collections={sectionCollections.research} tags={tags} />
     </section>
   </main>
 </BaseLayout>

@@ -1,9 +1,19 @@
 import { sitePath } from './site';
 
-export const blogCollections = [
-  { label: 'Research', slug: 'research', href: 'blog/collections/research/' },
-  { label: 'Notes', slug: 'notes', href: 'notes/' },
-] as const;
+export type SectionKey = 'blog' | 'research' | 'notes' | 'projects';
+
+export type OwnerCollection = {
+  label: string;
+  slug: string;
+  href: string;
+};
+
+export const sectionCollections: Record<SectionKey, OwnerCollection[]> = {
+  blog: [],
+  research: [],
+  notes: [],
+  projects: [],
+} as const;
 
 export const comments = {
   provider: 'utterances',
@@ -24,11 +34,14 @@ export function slugify(value: string) {
     .replace(/^-+|-+$/g, '');
 }
 
+export function uniqueTags(items: Array<{ data?: { tags?: string[] }; tags?: string[] }>) {
+  return Array.from(new Set(items.flatMap((item) => item.data?.tags ?? item.tags ?? []))).sort((a, b) => a.localeCompare(b));
+}
+
 export function tagHref(tag: string) {
   return sitePath(`tags/${encodeURIComponent(tag)}/`);
 }
 
-export function collectionHref(category = 'Research') {
-  const slug = slugify(category);
-  return sitePath(`blog/collections/${slug}/`);
+export function collectionHref(section: SectionKey, slug: string) {
+  return sitePath(`${section}/collections/${slug}/`);
 }

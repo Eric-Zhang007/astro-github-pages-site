@@ -8,9 +8,6 @@ export const profile = {
   email: '',
   intro:
     '学生 / AI researcher. 关注 world models、自动驾驶、视觉风险理解、VLM / video reasoning、object-centric reasoning 与 embodied intelligence。',
-  headline: 'Research, notes and projects around safer embodied agents.',
-  description:
-    '这里整理真实的研究方向、项目、笔记和博客内容；还没有发布的内容不会用占位文章或假数据填充。',
 };
 
 export const navItems = [

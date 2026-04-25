@@ -8,38 +8,20 @@ const blogPosts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const categories = Array.from(new Set(blogPosts.map((post) => post.data.category ?? 'Research')));
-const totalTags = Array.from(new Set(blogPosts.flatMap((post) => post.data.tags))).length;
+const totalPosts = blogPosts.length;
 ---
 
 <BaseLayout title="Blog • Eric Zhang">
-  <main class="blog-index">
-    <section class="blog-hero card">
+  <main class="blog-index compact-blog-index">
+    <section class="blog-page-head">
       <div>
-        <p class="kicker">Blog / Research Notes</p>
-        <h1>Long-form notes for world models, embodied agents and visual reasoning.</h1>
-        <p>
-          用 Markdown 记录研究阅读、方法理解和工程实验。每篇文章都有封面、摘要、标签和独立页面。
-        </p>
+        <h1>Blog</h1>
+        <p>Page 1 - Showing {totalPosts} of {totalPosts} posts</p>
       </div>
-      <aside class="blog-hero-panel" aria-label="Blog statistics">
-        <span>{blogPosts.length}</span>
-        <p>published posts</p>
-        <span>{totalTags}</span>
-        <p>research tags</p>
-      </aside>
+      <a href={sitePath('blog/')}>View all posts by years →</a>
     </section>
 
-    <section class="blog-shell">
-      <aside class="collection-panel card" aria-label="Blog collections">
-        <p class="kicker">Collections</p>
-        <div class="collection-links">
-          {categories.map((category) => <a href={`#${category.toLowerCase().replaceAll(' ', '-')}`}>{category}</a>)}
-          <a href={sitePath('research/')}>Research</a>
-          <a href={sitePath('notes/')}>Notes</a>
-        </div>
-        <p class="collection-note">文章列表采用卡片缩略图；正式内容从 <code>src/content/blog/</code> 自动读取。</p>
-      </aside>
-
+    <section class="blog-shell blog-shell-rightbar">
       <section class="post-grid" id="research">
         {
           blogPosts.length > 0 ? (
@@ -47,13 +29,13 @@ const totalTags = Array.from(new Set(blogPosts.flatMap((post) => post.data.tags)
               const slug = post.id.replace(/\.(md|mdx)$/, '');
               const cover = post.data.cover ? sitePath(post.data.cover) : undefined;
               return (
-                <a class="post-card" href={sitePath(`blog/${slug}/`)}>
+                <a class="post-card image-post-card" href={sitePath(`blog/${slug}/`)}>
                   <figure class="post-cover">
                     {cover ? <img src={cover} alt={`${post.data.title} cover`} loading="lazy" /> : <div class="generated-cover">{post.data.title.slice(0, 2)}</div>}
                   </figure>
                   <div class="post-card-body">
                     <div class="post-card-meta">
-                      <time>{post.data.date.toISOString().slice(0, 10)}</time>
+                      <time>{post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
                       <span>{post.data.category ?? 'Research'}</span>
                     </div>
                     <h2>{post.data.title}</h2>
@@ -62,6 +44,7 @@ const totalTags = Array.from(new Set(blogPosts.flatMap((post) => post.data.tags)
                       {post.data.tags.slice(0, 4).map((tag) => <span class="tag">{tag}</span>)}
                     </div>
                   </div>
+                  <span class="post-arrow" aria-hidden="true">›</span>
                 </a>
               );
             })
@@ -70,6 +53,29 @@ const totalTags = Array.from(new Set(blogPosts.flatMap((post) => post.data.tags)
           )
         }
       </section>
+
+      <aside class="right-sidebar" aria-label="Blog sidebar">
+        <section class="sidebar-section card">
+          <div class="sidebar-heading">
+            <span aria-hidden="true">▧</span>
+            <h2>Collections</h2>
+          </div>
+          <div class="sidebar-list">
+            {categories.map((category) => <a href={`#${category.toLowerCase().replaceAll(' ', '-')}`}>{category}<span>›</span></a>)}
+            <a href={sitePath('notes/')}>Notes<span>›</span></a>
+          </div>
+        </section>
+
+        <section class="sidebar-section card">
+          <div class="sidebar-heading">
+            <span aria-hidden="true">#</span>
+            <h2>Tags</h2>
+          </div>
+          <div class="tags">
+            {Array.from(new Set(blogPosts.flatMap((post) => post.data.tags))).map((tag) => <span class="tag">{tag}</span>)}
+          </div>
+        </section>
+      </aside>
     </section>
   </main>
 </BaseLayout>

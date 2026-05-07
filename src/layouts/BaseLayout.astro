@@ -562,6 +562,38 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
   .paper-links span { display: inline-flex; align-items: center; padding: 6px 10px; color: var(--accent-strong); background: var(--accent-soft); font-size: 0.82rem; }
   .paper-links a { padding-right: 10px; font-size: 0.88rem; }
   .paper-links a:hover { background: var(--accent-soft); }
+
+  .paper-card {
+    margin-top: 32px;
+    padding: clamp(18px, 3vw, 28px);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: color-mix(in srgb, var(--card-solid) 38%, transparent);
+  }
+  .paper-card-title {
+    margin: 14px 0 8px;
+    font-size: 1.05rem;
+    font-weight: 520;
+    color: var(--text);
+  }
+  .paper-card-summary {
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .paper-card-figure {
+    margin: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #111;
+  }
+  .paper-card-figure img {
+    display: block;
+    width: 100%;
+    border-radius: 14px;
+  }
+
   .paper-figures { display: grid; gap: 18px; margin-top: 28px; }
   .paper-figures figure { margin: 0; }
   .paper-figures img { display: block; width: 100%; border-radius: 14px; }
@@ -697,6 +729,24 @@ const { title = `${profile.name} â€¢ Personal Site`, description = 'Eric Zhang ç
   }
   .post-neighbors div:last-child { text-align: right; }
   .post-neighbors a { color: var(--text); }
+
+  .paper-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .paper-figure-card {
+    margin: 18px 0;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+  }
+  .paper-figure-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 
   .login-main { display: grid; gap: 18px; max-width: 980px; }
   .login-card,

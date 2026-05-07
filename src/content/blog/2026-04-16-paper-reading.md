@@ -10,62 +10,85 @@ comments: true
 draft: false
 ---
 
-# 2026-04-16 Paper Reading
-
 今日从 arXiv 订阅中筛选 8 篇论文。
 
-## Boosting Visual Instruction Tuning with Self-Supervised Guidance
+<div class="paper-card">
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.12966" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.12966</a><a href="https://hjfy.top/arxiv/2604.12966" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.12966</a></div>
 
-![Boosting Visual Instruction Tuning with Self-Supervised Guidance](/images/blog/paper-2604.12966.png)
+<h2 class="paper-card-title">⚡ Boosting Visual Instruction Tuning with Self-Supervised Guidance</h2>
 
+<figure class="paper-card-figure"><img src="/images/blog/paper-2604.12966.png" alt="Boosting Visual Instruction Tuning with Self-Supervised Guidance" loading="lazy" /></figure>
 
-## Forecasting the Past Gradient-Based Distribution Shift Detection in Trajectory Prediction
+</div>
+
+<div class="paper-card">
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.12425" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.12425</a><a href="https://hjfy.top/arxiv/2604.12425" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.12425</a></div>
 
+<h2 class="paper-card-title">⚡ Forecasting the Past Gradient-Based Distribution Shift Detection in Trajectory Prediction</h2>
 
-## Don't Show Pixels, Show Cues Unlocking Visual Tool Reasoning in Language Models via Perception Programs
+</div>
+
+<div class="paper-card">
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.12896" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.12896</a><a href="https://hjfy.top/arxiv/2604.12896" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.12896</a></div>
 
-![Don't Show Pixels, Show Cues Unlocking Visual Tool Reasoning in Language Models via Perception Programs](/images/blog/paper-2604.12896.png)
+<h2 class="paper-card-title">⚡ Don't Show Pixels, Show Cues Unlocking Visual Tool Reasoning in Language Models via Perception Programs</h2>
 
+<figure class="paper-card-figure"><img src="/images/blog/paper-2604.12896.png" alt="Don't Show Pixels, Show Cues Unlocking Visual Tool Reasoning in Language Models via Perception Programs" loading="lazy" /></figure>
 
-## All in One A Unified Synthetic Data Pipeline for Multimodal Video Understanding
+</div>
+
+<div class="paper-card">
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.12335" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.12335</a><a href="https://hjfy.top/arxiv/2604.12335" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.12335</a></div>
 
-![All in One A Unified Synthetic Data Pipeline for Multimodal Video Understanding](/images/blog/paper-2604.12335.png)
+<h2 class="paper-card-title">⚡ All in One A Unified Synthetic Data Pipeline for Multimodal Video Understanding</h2>
 
+<figure class="paper-card-figure"><img src="/images/blog/paper-2604.12335.png" alt="All in One A Unified Synthetic Data Pipeline for Multimodal Video Understanding" loading="lazy" /></figure>
 
-## Unlocking the Potential of Grounding DINO in Videos Parameter-Efficient Adaptation for Limited-Data Spatial-Temporal Loc
+</div>
+
+<div class="paper-card">
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.12346" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.12346</a><a href="https://hjfy.top/arxiv/2604.12346" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.12346</a></div>
 
-![Unlocking the Potential of Grounding DINO in Videos Parameter-Efficient Adaptation for Limited-Data Spatial-Temporal Loc](/images/blog/paper-2604.12346.png)
+<h2 class="paper-card-title">⚡ Unlocking the Potential of Grounding DINO in Videos Parameter-Efficient Adaptation for Limited-Data Spatial-Temporal Loc</h2>
 
+<figure class="paper-card-figure"><img src="/images/blog/paper-2604.12346.png" alt="Unlocking the Potential of Grounding DINO in Videos Parameter-Efficient Adaptation for Limited-Data Spatial-Temporal Loc" loading="lazy" /></figure>
 
-## SceneCritic A Symbolic Evaluator for 3D Indoor Scene Synthesis
+</div>
+
+<div class="paper-card">
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.13035" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.13035</a><a href="https://hjfy.top/arxiv/2604.13035" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.13035</a></div>
 
-![SceneCritic A Symbolic Evaluator for 3D Indoor Scene Synthesis](/images/blog/paper-2604.13035.png)
+<h2 class="paper-card-title">⚡ SceneCritic A Symbolic Evaluator for 3D Indoor Scene Synthesis</h2>
 
+<figure class="paper-card-figure"><img src="/images/blog/paper-2604.13035.png" alt="SceneCritic A Symbolic Evaluator for 3D Indoor Scene Synthesis" loading="lazy" /></figure>
 
-## GeoAlign Geometric Feature Realignment for MLLM Spatial Reasoning
+</div>
+
+<div class="paper-card">
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.12630" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.12630</a><a href="https://hjfy.top/arxiv/2604.12630" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.12630</a></div>
 
-![GeoAlign Geometric Feature Realignment for MLLM Spatial Reasoning](/images/blog/paper-2604.12630.png)
+<h2 class="paper-card-title">⚡ GeoAlign Geometric Feature Realignment for MLLM Spatial Reasoning</h2>
 
+<figure class="paper-card-figure"><img src="/images/blog/paper-2604.12630.png" alt="GeoAlign Geometric Feature Realignment for MLLM Spatial Reasoning" loading="lazy" /></figure>
 
-## Why and When Visual Token Pruning Fails A Study on Relevant Visual Information Shift in MLLMs Decoding
+</div>
+
+<div class="paper-card">
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.12358" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.12358</a><a href="https://hjfy.top/arxiv/2604.12358" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.12358</a></div>
 
-![Why and When Visual Token Pruning Fails A Study on Relevant Visual Information Shift in MLLMs Decoding](/images/blog/paper-2604.12358.png)
+<h2 class="paper-card-title">⚡ Why and When Visual Token Pruning Fails A Study on Relevant Visual Information Shift in MLLMs Decoding</h2>
 
+<figure class="paper-card-figure"><img src="/images/blog/paper-2604.12358.png" alt="Why and When Visual Token Pruning Fails A Study on Relevant Visual Information Shift in MLLMs Decoding" loading="lazy" /></figure>
+
+</div>
 
 ---
+*自动生成于 2026-04-16 · 基于 arXiv Daily Digest*

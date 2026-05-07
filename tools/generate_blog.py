@@ -143,8 +143,8 @@ def gen(date: str, papers: list[dict], do_deploy: bool):
                      f'</div>')
         lines.append('')
         
-        # Title with number
-        lines.append(f'<h2 class="paper-card-title">⚡ {title}</h2>')
+        # Title as markdown heading (Astro extracts these for TOC)
+        lines.append(f'## ⚡ {title}')
         lines.append('')
         
         # Summary line if available

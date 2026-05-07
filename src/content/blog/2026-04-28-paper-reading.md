@@ -16,7 +16,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.22748" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22748</a><a href="https://hjfy.top/arxiv/2604.22748" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22748</a></div>
 
-<h2 class="paper-card-title">⚡ Agentic World Modeling Foundations, Capabilities, Laws, and Beyond</h2>
+## ⚡ Agentic World Modeling Foundations, Capabilities, Laws, and Beyond
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2604.22748.png" alt="Agentic World Modeling Foundations, Capabilities, Laws, and Beyond" loading="lazy" /></figure>
 
@@ -26,7 +26,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.22240" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22240</a><a href="https://hjfy.top/arxiv/2604.22240" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22240</a></div>
 
-<h2 class="paper-card-title">⚡ OccDirector Language-Guided Behavior and Interaction Generation in 4D Occupancy Space</h2>
+## ⚡ OccDirector Language-Guided Behavior and Interaction Generation in 4D Occupancy Space
 
 </div>
 
@@ -34,7 +34,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.22260" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22260</a><a href="https://hjfy.top/arxiv/2604.22260" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22260</a></div>
 
-<h2 class="paper-card-title">⚡ Towards Safe Mobility A Unified Transportation Foundation Model enabled by Open-Ended Vision-Language Dataset</h2>
+## ⚡ Towards Safe Mobility A Unified Transportation Foundation Model enabled by Open-Ended Vision-Language Dataset
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2604.22260.png" alt="Towards Safe Mobility A Unified Transportation Foundation Model enabled by Open-Ended Vision-Language Dataset" loading="lazy" /></figure>
 
@@ -44,7 +44,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.22409" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22409</a><a href="https://hjfy.top/arxiv/2604.22409" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22409</a></div>
 
-<h2 class="paper-card-title">⚡ SpaMEM Benchmarking Dynamic Spatial Reasoning via Perception-Memory Integration in Embodied Environments</h2>
+## ⚡ SpaMEM Benchmarking Dynamic Spatial Reasoning via Perception-Memory Integration in Embodied Environments
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2604.22409.png" alt="SpaMEM Benchmarking Dynamic Spatial Reasoning via Perception-Memory Integration in Embodied Environments" loading="lazy" /></figure>
 
@@ -54,7 +54,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.22560" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22560</a><a href="https://hjfy.top/arxiv/2604.22560" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22560</a></div>
 
-<h2 class="paper-card-title">⚡ Cross-Stage Coherence in Hierarchical Driving VQA Explicit Baselines and Learned Gated Context Projectors</h2>
+## ⚡ Cross-Stage Coherence in Hierarchical Driving VQA Explicit Baselines and Learned Gated Context Projectors
 
 </div>
 
@@ -62,7 +62,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.22160" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22160</a><a href="https://hjfy.top/arxiv/2604.22160" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22160</a></div>
 
-<h2 class="paper-card-title">⚡ GenMatter Perceiving Physical Objects with Generative Matter Models</h2>
+## ⚡ GenMatter Perceiving Physical Objects with Generative Matter Models
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2604.22160.png" alt="GenMatter Perceiving Physical Objects with Generative Matter Models" loading="lazy" /></figure>
 
@@ -72,7 +72,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.22498" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22498</a><a href="https://hjfy.top/arxiv/2604.22498" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22498</a></div>
 
-<h2 class="paper-card-title">⚡ CGC Compositional Grounded Contrast for Fine-Grained Multi-Image Understanding</h2>
+## ⚡ CGC Compositional Grounded Contrast for Fine-Grained Multi-Image Understanding
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2604.22498.png" alt="CGC Compositional Grounded Contrast for Fine-Grained Multi-Image Understanding" loading="lazy" /></figure>
 
@@ -82,7 +82,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.22226" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22226</a><a href="https://hjfy.top/arxiv/2604.22226" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22226</a></div>
 
-<h2 class="paper-card-title">⚡ Towards Temporal Compositional Reasoning in Long-Form Sports Videos</h2>
+## ⚡ Towards Temporal Compositional Reasoning in Long-Form Sports Videos
 
 </div>
 

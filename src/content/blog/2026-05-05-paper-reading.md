@@ -16,7 +16,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.00880" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.00880</a><a href="https://hjfy.top/arxiv/2605.00880" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.00880</a></div>
 
-<h2 class="paper-card-title">⚡ Adversarial Flow Matching for Imperceptible Attacks on End-to-End Autonomous Driving</h2>
+## ⚡ Adversarial Flow Matching for Imperceptible Attacks on End-to-End Autonomous Driving
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2605.00880.png" alt="Adversarial Flow Matching for Imperceptible Attacks on End-to-End Autonomous Driving" loading="lazy" /></figure>
 
@@ -26,7 +26,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.01393" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.01393</a><a href="https://hjfy.top/arxiv/2605.01393" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.01393</a></div>
 
-<h2 class="paper-card-title">⚡ Recall to Predict: Grounding Motion Forecasting in Interpretable Motion Bank</h2>
+## ⚡ Recall to Predict: Grounding Motion Forecasting in Interpretable Motion Bank
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2605.01393.png" alt="Recall to Predict: Grounding Motion Forecasting in Interpretable Motion Bank" loading="lazy" /></figure>
 
@@ -36,7 +36,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.01799" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.01799</a><a href="https://hjfy.top/arxiv/2605.01799" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.01799</a></div>
 
-<h2 class="paper-card-title">⚡ Embody4D: A Generalist 4D World Model for Embodied AI</h2>
+## ⚡ Embody4D: A Generalist 4D World Model for Embodied AI
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2605.01799.png" alt="Embody4D: A Generalist 4D World Model for Embodied AI" loading="lazy" /></figure>
 
@@ -46,7 +46,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.01324" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.01324</a><a href="https://hjfy.top/arxiv/2605.01324" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.01324</a></div>
 
-<h2 class="paper-card-title">⚡ Beyond Perceptual Shortcuts: Causal-Inspired Debiasing Optimization for Generalizable Video Reasoning in Lightweight MLLMs</h2>
+## ⚡ Beyond Perceptual Shortcuts: Causal-Inspired Debiasing Optimization for Generalizable Video Reasoning in Lightweight MLLMs
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2605.01324.png" alt="Beyond Perceptual Shortcuts: Causal-Inspired Debiasing Optimization for Generalizable Video Reasoning in Lightweight MLLMs" loading="lazy" /></figure>
 
@@ -56,7 +56,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.01662" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.01662</a><a href="https://hjfy.top/arxiv/2605.01662" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.01662</a></div>
 
-<h2 class="paper-card-title">⚡ Video Active Perception: Effective Inference-Time Long-Form Video Understanding with Vision-Language Models</h2>
+## ⚡ Video Active Perception: Effective Inference-Time Long-Form Video Understanding with Vision-Language Models
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2605.01662.png" alt="Video Active Perception: Effective Inference-Time Long-Form Video Understanding with Vision-Language Models" loading="lazy" /></figure>
 
@@ -66,7 +66,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.01901" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.01901</a><a href="https://hjfy.top/arxiv/2605.01901" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.01901</a></div>
 
-<h2 class="paper-card-title">⚡ Behavior-Grounded Lane Representation Learning for Multi-Task Traffic Digital Twins</h2>
+## ⚡ Behavior-Grounded Lane Representation Learning for Multi-Task Traffic Digital Twins
 
 </div>
 
@@ -74,7 +74,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.01694" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.01694</a><a href="https://hjfy.top/arxiv/2605.01694" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.01694</a></div>
 
-<h2 class="paper-card-title">⚡ Latent State Design for World Models under Sufficiency Constraints</h2>
+## ⚡ Latent State Design for World Models under Sufficiency Constraints
 
 </div>
 
@@ -82,7 +82,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.01896" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.01896</a><a href="https://hjfy.top/arxiv/2605.01896" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.01896</a></div>
 
-<h2 class="paper-card-title">⚡ Divide and Conquer: Decoupled Representation Alignment for Multimodal World Models</h2>
+## ⚡ Divide and Conquer: Decoupled Representation Alignment for Multimodal World Models
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2605.01896.png" alt="Divide and Conquer: Decoupled Representation Alignment for Multimodal World Models" loading="lazy" /></figure>
 
@@ -92,7 +92,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.02762" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.02762</a><a href="https://hjfy.top/arxiv/2605.02762" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.02762</a></div>
 
-<h2 class="paper-card-title">⚡ Unified Map Prior Encoder for Mapping and Planning</h2>
+## ⚡ Unified Map Prior Encoder for Mapping and Planning
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2605.02762.png" alt="Unified Map Prior Encoder for Mapping and Planning" loading="lazy" /></figure>
 
@@ -102,7 +102,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.01507" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.01507</a><a href="https://hjfy.top/arxiv/2605.01507" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.01507</a></div>
 
-<h2 class="paper-card-title">⚡ MILD: Mediator Agent System with Bidirectional Perception and Multi-Layered Alignment for Human-Vehicle Collaboration</h2>
+## ⚡ MILD: Mediator Agent System with Bidirectional Perception and Multi-Layered Alignment for Human-Vehicle Collaboration
 
 </div>
 

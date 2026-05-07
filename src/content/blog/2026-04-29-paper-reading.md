@@ -16,7 +16,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.22851" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22851</a><a href="https://hjfy.top/arxiv/2604.22851" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22851</a></div>
 
-<h2 class="paper-card-title">⚡ EgoDyn-Bench Evaluating Ego-Motion Understanding in Vision-Centric Foundation Models for Autonomous Driving</h2>
+## ⚡ EgoDyn-Bench Evaluating Ego-Motion Understanding in Vision-Centric Foundation Models for Autonomous Driving
 
 </div>
 
@@ -24,7 +24,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.24443" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.24443</a><a href="https://hjfy.top/arxiv/2604.24443" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.24443</a></div>
 
-<h2 class="paper-card-title">⚡ PhysNote Self-Knowledge Notes for Evolvable Physical Reasoning in Vision-Language Model</h2>
+## ⚡ PhysNote Self-Knowledge Notes for Evolvable Physical Reasoning in Vision-Language Model
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2604.24443.png" alt="PhysNote Self-Knowledge Notes for Evolvable Physical Reasoning in Vision-Language Model" loading="lazy" /></figure>
 
@@ -34,7 +34,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.24514" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.24514</a><a href="https://hjfy.top/arxiv/2604.24514" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.24514</a></div>
 
-<h2 class="paper-card-title">⚡ SceneSelect Selective Learning for Trajectory Scene Classification and Expert Scheduling</h2>
+## ⚡ SceneSelect Selective Learning for Trajectory Scene Classification and Expert Scheduling
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2604.24514.png" alt="SceneSelect Selective Learning for Trajectory Scene Classification and Expert Scheduling" loading="lazy" /></figure>
 
@@ -44,7 +44,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.23728" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.23728</a><a href="https://hjfy.top/arxiv/2604.23728" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.23728</a></div>
 
-<h2 class="paper-card-title">⚡ ESIA An Energy-Based Spatiotemporal Interaction-Aware Framework for Pedestrian Intention Prediction</h2>
+## ⚡ ESIA An Energy-Based Spatiotemporal Interaction-Aware Framework for Pedestrian Intention Prediction
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2604.23728.png" alt="ESIA An Energy-Based Spatiotemporal Interaction-Aware Framework for Pedestrian Intention Prediction" loading="lazy" /></figure>
 
@@ -54,7 +54,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2504.16054" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2504.16054</a><a href="https://hjfy.top/arxiv/2504.16054" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2504.16054</a></div>
 
-<h2 class="paper-card-title">⚡ CF-VLA Efficient Coarse-to-Fine Action Generation for Vision-Language-Action Policies</h2>
+## ⚡ CF-VLA Efficient Coarse-to-Fine Action Generation for Vision-Language-Action Policies
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2504.16054.png" alt="CF-VLA Efficient Coarse-to-Fine Action Generation for Vision-Language-Action Policies" loading="lazy" /></figure>
 
@@ -64,7 +64,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.24562" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.24562</a><a href="https://hjfy.top/arxiv/2604.24562" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.24562</a></div>
 
-<h2 class="paper-card-title">⚡ Towards Lawful Autonomous Driving Deriving Scenario-Aware Driving Requirements from Traffic Laws and Regulations</h2>
+## ⚡ Towards Lawful Autonomous Driving Deriving Scenario-Aware Driving Requirements from Traffic Laws and Regulations
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2604.24562.png" alt="Towards Lawful Autonomous Driving Deriving Scenario-Aware Driving Requirements from Traffic Laws and Regulations" loading="lazy" /></figure>
 
@@ -74,7 +74,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.24396" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.24396</a><a href="https://hjfy.top/arxiv/2604.24396" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.24396</a></div>
 
-<h2 class="paper-card-title">⚡ Global Context or Local Detail Adaptive Visual Grounding for Hallucination Mitigation</h2>
+## ⚡ Global Context or Local Detail Adaptive Visual Grounding for Hallucination Mitigation
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2604.24396.png" alt="Global Context or Local Detail Adaptive Visual Grounding for Hallucination Mitigation" loading="lazy" /></figure>
 
@@ -84,7 +84,7 @@ draft: false
 
 <div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.23145" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.23145</a><a href="https://hjfy.top/arxiv/2604.23145" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.23145</a></div>
 
-<h2 class="paper-card-title">⚡ UpstreamQA A Modular Framework for Explicit Reasoning on Video Question Answering Tasks</h2>
+## ⚡ UpstreamQA A Modular Framework for Explicit Reasoning on Video Question Answering Tasks
 
 <figure class="paper-card-figure"><img src="/images/blog/paper-2604.23145.png" alt="UpstreamQA A Modular Framework for Explicit Reasoning on Video Question Answering Tasks" loading="lazy" /></figure>
 

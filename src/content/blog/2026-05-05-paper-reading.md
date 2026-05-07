@@ -1,17 +1,40 @@
 ---
-title: "2026-05-05 Paper Reading"
-description: "今日 arXiv 论文速读：10 篇入选 shortlist，涵盖 autonomous driving、world models、video understanding、embodied AI 等方向。"
-date: "2026-05-05"
-tags: ["paper reading", "arXiv", "world model", "autonomous driving", "embodied AI"]
-category: "Research"
+title: 2026-05-05 Paper Reading
+description: 今日 arXiv 论文速读：10 篇入选 shortlist。
+date: '2026-05-05'
+tags:
+- paper reading
+- arXiv
+- world model
+- autonomous driving
+- embodied AI
+category: Research
 comments: true
 draft: false
 figures:
+- src: images/blog/paper-2605.00880.png
+  alt: Adversarial Flow Matching for Imperceptible Attacks on End-to-End Autonomous
+    Driving
+- src: images/blog/paper-2605.01393.png
+  alt: 'Recall to Predict: Grounding Motion Forecasting in Interpretable Motion Bank'
+- src: images/blog/paper-2605.01799.png
+  alt: 'Embody4D: A Generalist 4D World Model for Embodied AI'
+- src: images/blog/paper-2605.01324.png
+  alt: 'Beyond Perceptual Shortcuts: Causal-Inspired Debiasing Optimization for Generalizable
+    Video Reasoning in Lightweight MLLMs'
+- src: images/blog/paper-2605.01662.png
+  alt: 'Video Active Perception: Effective Inference-Time Long-Form Video Understanding
+    with Vision-Language Models'
+- src: images/blog/paper-2605.01896.png
+  alt: 'Divide and Conquer: Decoupled Representation Alignment for Multimodal World
+    Models'
+- src: images/blog/paper-2605.02762.png
+  alt: Unified Map Prior Encoder for Mapping and Planning
 ---
 
 # 2026-05-05 Paper Reading
 
-今日从 arXiv 订阅中筛选 10 篇论文，按主题分为以下几个方向。
+今日从 arXiv 订阅中筛选 10 篇论文。
 
 ## 论文速览
 
@@ -88,7 +111,6 @@ figures:
 - **幻觉翻译**: [2605.01507](https://hjfy.top/arxiv/2605.01507)
 - **PDF**: [arxiv.org/pdf/2605.01507](https://arxiv.org/pdf/2605.01507)
 
-
 ---
 
-*自动生成于 {date_str} · 基于 arXiv Daily Digest*
+*自动生成于 2026-05-05 · 基于 arXiv Daily Digest*

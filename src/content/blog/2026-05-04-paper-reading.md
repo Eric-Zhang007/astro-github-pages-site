@@ -5,117 +5,81 @@ date: '2026-05-04'
 tags:
 - paper reading
 - arXiv
-- world model
-- autonomous driving
-- embodied AI
 category: Research
 comments: true
 draft: false
-figures:
-- src: images/blog/paper-2605.00444.png
-  alt: 'Physically Native World Models: A Hamiltonian Perspective on Generative World
-    Modeling'
-- src: images/blog/paper-2605.00438.png
-  alt: 'Odysseus: Scaling VLMs to 100+ Turn Decision-Making in Games via Reinforcement
-    Learning'
-- src: images/blog/paper-2605.00474.png
-  alt: An End-to-End Decision-Aware Multi-Scale Attention-Based Model for Explainable
-    Autonomous Driving
-- src: images/blog/paper-2605.00271.png
-  alt: 'Thinking in Text and Images: Interleaved Vision-Language Reasoning Traces
-    for Long-Horizon Robot Manipulation'
-- src: images/blog/paper-2605.00809.png
-  alt: Scaling Video Understanding via Compact Latent Multi-Agent Collaboration
-- src: images/blog/paper-2605.00814.png
-  alt: Online Self-Calibration Against Hallucination in Vision-Language Models
-- src: images/blog/paper-2605.00684.png
-  alt: Robust Fusion of Object-Level V2X for Learned 3D Object Detection
-- src: images/blog/paper-2605.00595.png
-  alt: 'Persistent Visual Memory: Sustaining Perception for Deep Generation in LVLMs'
-- src: images/blog/paper-2605.00434.png
-  alt: 'Time-series Meets Complex Motion Modeling: Robust Motion Predictor for Multi-object
-    Tracking'
 ---
 
 # 2026-05-04 Paper Reading
 
 今日从 arXiv 订阅中筛选 10 篇论文。
 
-## 论文速览
+## Learning from the Unseen: Generative Data Augmentation for Geometric-Semantic Accident Anticipation
 
-| # | arXiv ID | 标题 | 链接 |
-|---|----------|------|------|
-| 1 | 2605.00291 | Learning from the Unseen: Generative Data Augmentation for Geometric-Semantic Accident Anticipation | [arXiv](https://arxiv.org/abs/2605.00291) · [幻觉翻译](https://hjfy.top/arxiv/2605.00291) |
-| 2 | 2605.00444 | Physically Native World Models: A Hamiltonian Perspective on Generative World Modeling | [arXiv](https://arxiv.org/abs/2605.00444) · [幻觉翻译](https://hjfy.top/arxiv/2605.00444) |
-| 3 | 2605.00438 | Odysseus: Scaling VLMs to 100+ Turn Decision-Making in Games via Reinforcement Learning | [arXiv](https://arxiv.org/abs/2605.00438) · [幻觉翻译](https://hjfy.top/arxiv/2605.00438) |
-| 4 | 2605.00474 | An End-to-End Decision-Aware Multi-Scale Attention-Based Model for Explainable Autonomous Driving | [arXiv](https://arxiv.org/abs/2605.00474) · [幻觉翻译](https://hjfy.top/arxiv/2605.00474) |
-| 5 | 2605.00271 | Thinking in Text and Images: Interleaved Vision-Language Reasoning Traces for Long-Horizon Robot Manipulation | [arXiv](https://arxiv.org/abs/2605.00271) · [幻觉翻译](https://hjfy.top/arxiv/2605.00271) |
-| 6 | 2605.00809 | Scaling Video Understanding via Compact Latent Multi-Agent Collaboration | [arXiv](https://arxiv.org/abs/2605.00809) · [幻觉翻译](https://hjfy.top/arxiv/2605.00809) |
-| 7 | 2605.00814 | Online Self-Calibration Against Hallucination in Vision-Language Models | [arXiv](https://arxiv.org/abs/2605.00814) · [幻觉翻译](https://hjfy.top/arxiv/2605.00814) |
-| 8 | 2605.00684 | Robust Fusion of Object-Level V2X for Learned 3D Object Detection | [arXiv](https://arxiv.org/abs/2605.00684) · [幻觉翻译](https://hjfy.top/arxiv/2605.00684) |
-| 9 | 2605.00595 | Persistent Visual Memory: Sustaining Perception for Deep Generation in LVLMs | [arXiv](https://arxiv.org/abs/2605.00595) · [幻觉翻译](https://hjfy.top/arxiv/2605.00595) |
-| 10 | 2605.00434 | Time-series Meets Complex Motion Modeling: Robust Motion Predictor for Multi-object Tracking | [arXiv](https://arxiv.org/abs/2605.00434) · [幻觉翻译](https://hjfy.top/arxiv/2605.00434) |
+<a href="https://arxiv.org/abs/2605.00291" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.00291</a> <a href="https://hjfy.top/arxiv/2605.00291" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.00291</a>
 
-## 2605.00291 — Learning from the Unseen: Generative Data Augmentation for Geometric-Semantic Accident Anticipation
 
-- **arXiv**: [2605.00291](https://arxiv.org/abs/2605.00291)
-- **幻觉翻译**: [2605.00291](https://hjfy.top/arxiv/2605.00291)
-- **PDF**: [arxiv.org/pdf/2605.00291](https://arxiv.org/pdf/2605.00291)
+## Physically Native World Models: A Hamiltonian Perspective on Generative World Modeling
 
-## 2605.00444 — Physically Native World Models: A Hamiltonian Perspective on Generative World Modeling
+<a href="https://arxiv.org/abs/2605.00444" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.00444</a> <a href="https://hjfy.top/arxiv/2605.00444" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.00444</a>
 
-- **arXiv**: [2605.00444](https://arxiv.org/abs/2605.00444)
-- **幻觉翻译**: [2605.00444](https://hjfy.top/arxiv/2605.00444)
-- **PDF**: [arxiv.org/pdf/2605.00444](https://arxiv.org/pdf/2605.00444)
+![Physically Native World Models: A Hamiltonian Perspective on Generative World Modeling](/images/blog/paper-2605.00444.png)
 
-## 2605.00438 — Odysseus: Scaling VLMs to 100+ Turn Decision-Making in Games via Reinforcement Learning
 
-- **arXiv**: [2605.00438](https://arxiv.org/abs/2605.00438)
-- **幻觉翻译**: [2605.00438](https://hjfy.top/arxiv/2605.00438)
-- **PDF**: [arxiv.org/pdf/2605.00438](https://arxiv.org/pdf/2605.00438)
+## Odysseus: Scaling VLMs to 100+ Turn Decision-Making in Games via Reinforcement Learning
 
-## 2605.00474 — An End-to-End Decision-Aware Multi-Scale Attention-Based Model for Explainable Autonomous Driving
+<a href="https://arxiv.org/abs/2605.00438" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.00438</a> <a href="https://hjfy.top/arxiv/2605.00438" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.00438</a>
 
-- **arXiv**: [2605.00474](https://arxiv.org/abs/2605.00474)
-- **幻觉翻译**: [2605.00474](https://hjfy.top/arxiv/2605.00474)
-- **PDF**: [arxiv.org/pdf/2605.00474](https://arxiv.org/pdf/2605.00474)
+![Odysseus: Scaling VLMs to 100+ Turn Decision-Making in Games via Reinforcement Learning](/images/blog/paper-2605.00438.png)
 
-## 2605.00271 — Thinking in Text and Images: Interleaved Vision-Language Reasoning Traces for Long-Horizon Robot Manipulation
 
-- **arXiv**: [2605.00271](https://arxiv.org/abs/2605.00271)
-- **幻觉翻译**: [2605.00271](https://hjfy.top/arxiv/2605.00271)
-- **PDF**: [arxiv.org/pdf/2605.00271](https://arxiv.org/pdf/2605.00271)
+## An End-to-End Decision-Aware Multi-Scale Attention-Based Model for Explainable Autonomous Driving
 
-## 2605.00809 — Scaling Video Understanding via Compact Latent Multi-Agent Collaboration
+<a href="https://arxiv.org/abs/2605.00474" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.00474</a> <a href="https://hjfy.top/arxiv/2605.00474" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.00474</a>
 
-- **arXiv**: [2605.00809](https://arxiv.org/abs/2605.00809)
-- **幻觉翻译**: [2605.00809](https://hjfy.top/arxiv/2605.00809)
-- **PDF**: [arxiv.org/pdf/2605.00809](https://arxiv.org/pdf/2605.00809)
+![An End-to-End Decision-Aware Multi-Scale Attention-Based Model for Explainable Autonomous Driving](/images/blog/paper-2605.00474.png)
 
-## 2605.00814 — Online Self-Calibration Against Hallucination in Vision-Language Models
 
-- **arXiv**: [2605.00814](https://arxiv.org/abs/2605.00814)
-- **幻觉翻译**: [2605.00814](https://hjfy.top/arxiv/2605.00814)
-- **PDF**: [arxiv.org/pdf/2605.00814](https://arxiv.org/pdf/2605.00814)
+## Thinking in Text and Images: Interleaved Vision-Language Reasoning Traces for Long-Horizon Robot Manipulation
 
-## 2605.00684 — Robust Fusion of Object-Level V2X for Learned 3D Object Detection
+<a href="https://arxiv.org/abs/2605.00271" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.00271</a> <a href="https://hjfy.top/arxiv/2605.00271" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.00271</a>
 
-- **arXiv**: [2605.00684](https://arxiv.org/abs/2605.00684)
-- **幻觉翻译**: [2605.00684](https://hjfy.top/arxiv/2605.00684)
-- **PDF**: [arxiv.org/pdf/2605.00684](https://arxiv.org/pdf/2605.00684)
+![Thinking in Text and Images: Interleaved Vision-Language Reasoning Traces for Long-Horizon Robot Manipulation](/images/blog/paper-2605.00271.png)
 
-## 2605.00595 — Persistent Visual Memory: Sustaining Perception for Deep Generation in LVLMs
 
-- **arXiv**: [2605.00595](https://arxiv.org/abs/2605.00595)
-- **幻觉翻译**: [2605.00595](https://hjfy.top/arxiv/2605.00595)
-- **PDF**: [arxiv.org/pdf/2605.00595](https://arxiv.org/pdf/2605.00595)
+## Scaling Video Understanding via Compact Latent Multi-Agent Collaboration
 
-## 2605.00434 — Time-series Meets Complex Motion Modeling: Robust Motion Predictor for Multi-object Tracking
+<a href="https://arxiv.org/abs/2605.00809" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.00809</a> <a href="https://hjfy.top/arxiv/2605.00809" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.00809</a>
 
-- **arXiv**: [2605.00434](https://arxiv.org/abs/2605.00434)
-- **幻觉翻译**: [2605.00434](https://hjfy.top/arxiv/2605.00434)
-- **PDF**: [arxiv.org/pdf/2605.00434](https://arxiv.org/pdf/2605.00434)
+![Scaling Video Understanding via Compact Latent Multi-Agent Collaboration](/images/blog/paper-2605.00809.png)
+
+
+## Online Self-Calibration Against Hallucination in Vision-Language Models
+
+<a href="https://arxiv.org/abs/2605.00814" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.00814</a> <a href="https://hjfy.top/arxiv/2605.00814" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.00814</a>
+
+![Online Self-Calibration Against Hallucination in Vision-Language Models](/images/blog/paper-2605.00814.png)
+
+
+## Robust Fusion of Object-Level V2X for Learned 3D Object Detection
+
+<a href="https://arxiv.org/abs/2605.00684" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.00684</a> <a href="https://hjfy.top/arxiv/2605.00684" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.00684</a>
+
+![Robust Fusion of Object-Level V2X for Learned 3D Object Detection](/images/blog/paper-2605.00684.png)
+
+
+## Persistent Visual Memory: Sustaining Perception for Deep Generation in LVLMs
+
+<a href="https://arxiv.org/abs/2605.00595" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.00595</a> <a href="https://hjfy.top/arxiv/2605.00595" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.00595</a>
+
+![Persistent Visual Memory: Sustaining Perception for Deep Generation in LVLMs](/images/blog/paper-2605.00595.png)
+
+
+## Time-series Meets Complex Motion Modeling: Robust Motion Predictor for Multi-object Tracking
+
+<a href="https://arxiv.org/abs/2605.00434" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.00434</a> <a href="https://hjfy.top/arxiv/2605.00434" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.00434</a>
+
+![Time-series Meets Complex Motion Modeling: Robust Motion Predictor for Multi-object Tracking](/images/blog/paper-2605.00434.png)
+
 
 ---
-
-*自动生成于 2026-05-04 · 基于 arXiv Daily Digest*

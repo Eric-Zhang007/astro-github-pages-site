@@ -5,92 +5,63 @@ date: '2026-04-28'
 tags:
 - paper reading
 - arXiv
-- world model
-- autonomous driving
-- embodied AI
 category: Research
 comments: true
 draft: false
-figures:
-- src: images/blog/paper-2604.22748.png
-  alt: Agentic World Modeling Foundations, Capabilities, Laws, and Beyond
-- src: images/blog/paper-2604.22260.png
-  alt: Towards Safe Mobility A Unified Transportation Foundation Model enabled by
-    Open-Ended Vision-Language Dataset
-- src: images/blog/paper-2604.22409.png
-  alt: SpaMEM Benchmarking Dynamic Spatial Reasoning via Perception-Memory Integration
-    in Embodied Environments
-- src: images/blog/paper-2604.22160.png
-  alt: GenMatter Perceiving Physical Objects with Generative Matter Models
-- src: images/blog/paper-2604.22498.png
-  alt: CGC Compositional Grounded Contrast for Fine-Grained Multi-Image Understanding
 ---
 
 # 2026-04-28 Paper Reading
 
 今日从 arXiv 订阅中筛选 8 篇论文。
 
-## 论文速览
+## Agentic World Modeling Foundations, Capabilities, Laws, and Beyond
 
-| # | arXiv ID | 标题 | 链接 |
-|---|----------|------|------|
-| 1 | 2604.22748 | Agentic World Modeling Foundations, Capabilities, Laws, and Beyond | [arXiv](https://arxiv.org/abs/2604.22748) · [幻觉翻译](https://hjfy.top/arxiv/2604.22748) |
-| 2 | 2604.22240 | OccDirector Language-Guided Behavior and Interaction Generation in 4D Occupancy Space | [arXiv](https://arxiv.org/abs/2604.22240) · [幻觉翻译](https://hjfy.top/arxiv/2604.22240) |
-| 3 | 2604.22260 | Towards Safe Mobility A Unified Transportation Foundation Model enabled by Open-Ended Vision-Language Dataset | [arXiv](https://arxiv.org/abs/2604.22260) · [幻觉翻译](https://hjfy.top/arxiv/2604.22260) |
-| 4 | 2604.22409 | SpaMEM Benchmarking Dynamic Spatial Reasoning via Perception-Memory Integration in Embodied Environments | [arXiv](https://arxiv.org/abs/2604.22409) · [幻觉翻译](https://hjfy.top/arxiv/2604.22409) |
-| 5 | 2604.22560 | Cross-Stage Coherence in Hierarchical Driving VQA Explicit Baselines and Learned Gated Context Projectors | [arXiv](https://arxiv.org/abs/2604.22560) · [幻觉翻译](https://hjfy.top/arxiv/2604.22560) |
-| 6 | 2604.22160 | GenMatter Perceiving Physical Objects with Generative Matter Models | [arXiv](https://arxiv.org/abs/2604.22160) · [幻觉翻译](https://hjfy.top/arxiv/2604.22160) |
-| 7 | 2604.22498 | CGC Compositional Grounded Contrast for Fine-Grained Multi-Image Understanding | [arXiv](https://arxiv.org/abs/2604.22498) · [幻觉翻译](https://hjfy.top/arxiv/2604.22498) |
-| 8 | 2604.22226 | Towards Temporal Compositional Reasoning in Long-Form Sports Videos | [arXiv](https://arxiv.org/abs/2604.22226) · [幻觉翻译](https://hjfy.top/arxiv/2604.22226) |
+<a href="https://arxiv.org/abs/2604.22748" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22748</a> <a href="https://hjfy.top/arxiv/2604.22748" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22748</a>
 
-## 2604.22748 — Agentic World Modeling Foundations, Capabilities, Laws, and Beyond
+![Agentic World Modeling Foundations, Capabilities, Laws, and Beyond](/images/blog/paper-2604.22748.png)
 
-- **arXiv**: [2604.22748](https://arxiv.org/abs/2604.22748)
-- **幻觉翻译**: [2604.22748](https://hjfy.top/arxiv/2604.22748)
-- **PDF**: [arxiv.org/pdf/2604.22748](https://arxiv.org/pdf/2604.22748)
 
-## 2604.22240 — OccDirector Language-Guided Behavior and Interaction Generation in 4D Occupancy Space
+## OccDirector Language-Guided Behavior and Interaction Generation in 4D Occupancy Space
 
-- **arXiv**: [2604.22240](https://arxiv.org/abs/2604.22240)
-- **幻觉翻译**: [2604.22240](https://hjfy.top/arxiv/2604.22240)
-- **PDF**: [arxiv.org/pdf/2604.22240](https://arxiv.org/pdf/2604.22240)
+<a href="https://arxiv.org/abs/2604.22240" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22240</a> <a href="https://hjfy.top/arxiv/2604.22240" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22240</a>
 
-## 2604.22260 — Towards Safe Mobility A Unified Transportation Foundation Model enabled by Open-Ended Vision-Language Dataset
 
-- **arXiv**: [2604.22260](https://arxiv.org/abs/2604.22260)
-- **幻觉翻译**: [2604.22260](https://hjfy.top/arxiv/2604.22260)
-- **PDF**: [arxiv.org/pdf/2604.22260](https://arxiv.org/pdf/2604.22260)
+## Towards Safe Mobility A Unified Transportation Foundation Model enabled by Open-Ended Vision-Language Dataset
 
-## 2604.22409 — SpaMEM Benchmarking Dynamic Spatial Reasoning via Perception-Memory Integration in Embodied Environments
+<a href="https://arxiv.org/abs/2604.22260" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22260</a> <a href="https://hjfy.top/arxiv/2604.22260" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22260</a>
 
-- **arXiv**: [2604.22409](https://arxiv.org/abs/2604.22409)
-- **幻觉翻译**: [2604.22409](https://hjfy.top/arxiv/2604.22409)
-- **PDF**: [arxiv.org/pdf/2604.22409](https://arxiv.org/pdf/2604.22409)
+![Towards Safe Mobility A Unified Transportation Foundation Model enabled by Open-Ended Vision-Language Dataset](/images/blog/paper-2604.22260.png)
 
-## 2604.22560 — Cross-Stage Coherence in Hierarchical Driving VQA Explicit Baselines and Learned Gated Context Projectors
 
-- **arXiv**: [2604.22560](https://arxiv.org/abs/2604.22560)
-- **幻觉翻译**: [2604.22560](https://hjfy.top/arxiv/2604.22560)
-- **PDF**: [arxiv.org/pdf/2604.22560](https://arxiv.org/pdf/2604.22560)
+## SpaMEM Benchmarking Dynamic Spatial Reasoning via Perception-Memory Integration in Embodied Environments
 
-## 2604.22160 — GenMatter Perceiving Physical Objects with Generative Matter Models
+<a href="https://arxiv.org/abs/2604.22409" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22409</a> <a href="https://hjfy.top/arxiv/2604.22409" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22409</a>
 
-- **arXiv**: [2604.22160](https://arxiv.org/abs/2604.22160)
-- **幻觉翻译**: [2604.22160](https://hjfy.top/arxiv/2604.22160)
-- **PDF**: [arxiv.org/pdf/2604.22160](https://arxiv.org/pdf/2604.22160)
+![SpaMEM Benchmarking Dynamic Spatial Reasoning via Perception-Memory Integration in Embodied Environments](/images/blog/paper-2604.22409.png)
 
-## 2604.22498 — CGC Compositional Grounded Contrast for Fine-Grained Multi-Image Understanding
 
-- **arXiv**: [2604.22498](https://arxiv.org/abs/2604.22498)
-- **幻觉翻译**: [2604.22498](https://hjfy.top/arxiv/2604.22498)
-- **PDF**: [arxiv.org/pdf/2604.22498](https://arxiv.org/pdf/2604.22498)
+## Cross-Stage Coherence in Hierarchical Driving VQA Explicit Baselines and Learned Gated Context Projectors
 
-## 2604.22226 — Towards Temporal Compositional Reasoning in Long-Form Sports Videos
+<a href="https://arxiv.org/abs/2604.22560" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22560</a> <a href="https://hjfy.top/arxiv/2604.22560" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22560</a>
 
-- **arXiv**: [2604.22226](https://arxiv.org/abs/2604.22226)
-- **幻觉翻译**: [2604.22226](https://hjfy.top/arxiv/2604.22226)
-- **PDF**: [arxiv.org/pdf/2604.22226](https://arxiv.org/pdf/2604.22226)
+
+## GenMatter Perceiving Physical Objects with Generative Matter Models
+
+<a href="https://arxiv.org/abs/2604.22160" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22160</a> <a href="https://hjfy.top/arxiv/2604.22160" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22160</a>
+
+![GenMatter Perceiving Physical Objects with Generative Matter Models](/images/blog/paper-2604.22160.png)
+
+
+## CGC Compositional Grounded Contrast for Fine-Grained Multi-Image Understanding
+
+<a href="https://arxiv.org/abs/2604.22498" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22498</a> <a href="https://hjfy.top/arxiv/2604.22498" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22498</a>
+
+![CGC Compositional Grounded Contrast for Fine-Grained Multi-Image Understanding](/images/blog/paper-2604.22498.png)
+
+
+## Towards Temporal Compositional Reasoning in Long-Form Sports Videos
+
+<a href="https://arxiv.org/abs/2604.22226" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22226</a> <a href="https://hjfy.top/arxiv/2604.22226" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22226</a>
+
 
 ---
-
-*自动生成于 2026-04-28 · 基于 arXiv Daily Digest*

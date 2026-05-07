@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-"""Generate paper-reading blog posts from READING_GUIDE.md files and deploy via git."""
+"""Generate paper-reading blog posts with inline images."""
 import sys, os, re, subprocess, datetime, yaml
-from pathlib import Path
 
 BLOG_DIR = '/mnt/c/Users/zjc/astro-github-pages-site'
 CONTENT_DIR = os.path.join(BLOG_DIR, 'src/content/blog')
-IMG_DIR = os.path.join(BLOG_DIR, 'public/images/blog')
 PAPERS_DIR = '/mnt/c/Users/zjc/Desktop/papers'
 FIGURE_SCRIPT = os.path.join(BLOG_DIR, 'tools/extract_figure.py')
 
@@ -15,144 +13,147 @@ def extract_figure(arxiv_id: str) -> str | None:
         return r.stdout.strip()[3:]
     return None
 
-def parse_reading_guide(date: str) -> list[dict]:
-    """Parse any READING_GUIDE format and extract paper entries."""
+def extract_arxiv_from_pdf(pdf_path):
+    try:
+        with open(pdf_path, 'rb') as f:
+            data = f.read(100000)
+        text = data.decode('latin-1', errors='replace')
+        ids = re.findall(r'(\d{4}\.\d{4,5})', text)
+        if ids:
+            from collections import Counter
+            return Counter(ids).most_common(1)[0][0]
+    except:
+        pass
+    return None
+
+def extract_title_from_pdf_name(fname):
+    base = fname.replace('.pdf', '')
+    base = re.sub(r'^\d+\s*-\s*', '', base).strip()
+    return base
+
+def get_papers_from_date(date: str) -> list[dict]:
+    """Get papers for a date from READING_GUIDE (new format) or PDFs (old format)."""
     guide_path = os.path.join(PAPERS_DIR, date, 'READING_GUIDE.md')
-    if not os.path.exists(guide_path):
-        return []
-    
-    with open(guide_path) as f:
-        text = f.read()
-    
     papers = []
     
-    # Format 1: Table rows | # | arxiv_id | title | ...
-    for m in re.finditer(r'\|\s*\d+\s*\|\s*([\d.]+)\s*\|\s*(.+?)\s*\|', text):
-        aid = m.group(1).strip()
-        title = m.group(2).strip()
-        if len(aid) >= 8 and aid.count('.') >= 1:
+    # Try new format (table with arxiv IDs)
+    if os.path.exists(guide_path):
+        with open(guide_path) as f:
+            text = f.read()
+        for m in re.finditer(r'\|\s*\d+\s*\|\s*([\d.]+)\s*\|\s*(.+?)\s*\|', text):
+            aid = m.group(1).strip()
+            title = m.group(2).strip()
+            if len(aid) >= 8 and aid.count('.') >= 1:
+                if not any(p['arxiv_id'] == aid for p in papers):
+                    papers.append({'arxiv_id': aid, 'title': title})
+        # Also try backtick format
+        for m in re.finditer(r'`(\d{4}\.\d{4,5})`', text):
+            aid = m.group(1)
+            title_m = re.search(r'\*\*([^*]+)\*\*', text[m.start():m.start()+500])
+            title = title_m.group(1).strip() if title_m else aid
             if not any(p['arxiv_id'] == aid for p in papers):
                 papers.append({'arxiv_id': aid, 'title': title})
     
-    # Format 2: `2605.XXXXX` backtick format (5/6 style)
-    for m in re.finditer(r'`(\d{4}\.\d{4,5})`', text):
-        aid = m.group(1)
-        # Try to find the title nearby (bold text on same or next lines)
-        title_match = re.search(r'\*\*([^*]+)\*\*', text[m.start():m.start()+500])
-        title = title_match.group(1).strip() if title_match else aid
-        if len(aid) >= 8 and not any(p['arxiv_id'] == aid for p in papers):
-            papers.append({'arxiv_id': aid, 'title': title})
+    # If no papers from guide, try PDFs
+    if not papers:
+        papers_dir = os.path.join(PAPERS_DIR, date)
+        if os.path.isdir(papers_dir):
+            for fname in sorted(os.listdir(papers_dir)):
+                if fname.endswith('.pdf'):
+                    pdf_path = os.path.join(papers_dir, fname)
+                    aid = extract_arxiv_from_pdf(pdf_path)
+                    title = extract_title_from_pdf_name(fname)
+                    if aid and title:
+                        papers.append({'arxiv_id': aid, 'title': title})
     
-    # Format 3: Numbered list with bold titles (old format)
-    for m in re.finditer(r'\d+\.\s*\*\*(.+?)\*\*', text):
-        title = m.group(1).strip()
-        # Find arxiv ID nearby
-        nearby = text[m.start():m.start()+300]
-        aid_m = re.search(r'(\d{4}\.\d{4,5})', nearby)
-        if aid_m:
-            aid = aid_m.group(1)
-            if len(aid) >= 8 and not any(p['arxiv_id'] == aid for p in papers):
-                papers.append({'arxiv_id': aid, 'title': title})
+    if not papers:
+        # Try reading guide text for any arxiv IDs
+        if os.path.exists(guide_path):
+            with open(guide_path) as f:
+                text = f.read()
+            all_ids = set(re.findall(r'(\d{4}\.\d{4,5})', text))
+            for aid in all_ids:
+                if not any(p['arxiv_id'] == aid for p in papers):
+                    papers.append({'arxiv_id': aid, 'title': aid})
     
-    # Format 4: Section headers with arxiv ID pattern
-    for m in re.finditer(r'###\s*(?:T\d+\.\s*)?([\d.]+)\s*[—–-]\s*(.+)', text):
-        aid = m.group(1).strip()
-        title = m.group(2).strip()
-        if len(aid) >= 8 and aid.count('.') >= 1:
-            if not any(p['arxiv_id'] == aid for p in papers):
-                papers.append({'arxiv_id': aid, 'title': title})
-    
-    return papers
+    return papers[:12]
 
-def download_figures(papers: list[dict]) -> dict:
-    """Download figures, return {arxiv_id: relative_path}."""
-    figures = {}
-    for p in papers:
-        aid = p['arxiv_id']
-        local_rel = f'images/blog/paper-{aid}.png'
-        local_abs = os.path.join(BLOG_DIR, 'public', local_rel)
-        if os.path.exists(local_abs):
-            figures[aid] = local_rel
-        else:
-            result = extract_figure(aid)
-            if result:
-                figures[aid] = result
-    return figures
-
-def generate_markdown(date: str, papers: list[dict], figures: dict) -> str:
-    """Generate blog markdown."""
+def gen(date: str, papers: list[dict], do_deploy: bool):
     dt = datetime.datetime.strptime(date, '%Y-%m-%d')
     ds = dt.strftime('%Y-%m-%d')
     n = len(papers)
     
-    # Build figure entries for YAML
-    fig_entries = []
+    # Download figures
+    figures = {}
     for p in papers:
         aid = p['arxiv_id']
-        src = figures.get(aid, '')
-        if src and os.path.exists(os.path.join(BLOG_DIR, 'public', src)):
-            fig_entries.append({'src': src, 'alt': p['title']})
+        local = f'images/blog/paper-{aid}.png'
+        if os.path.exists(os.path.join(BLOG_DIR, 'public', local)):
+            figures[aid] = local
+        else:
+            result = extract_figure(aid)
+            if result:
+                figures[aid] = result
     
-    frontmatter = {
+    # Build frontmatter (no figures array - images are inline in body)
+    fm = {
         'title': f'{ds} Paper Reading',
         'description': f'今日 arXiv 论文速读：{n} 篇入选 shortlist。',
         'date': ds,
-        'tags': ['paper reading', 'arXiv', 'world model', 'autonomous driving', 'embodied AI'],
+        'tags': ['paper reading', 'arXiv'],
         'category': 'Research',
         'comments': True,
         'draft': False,
-        'figures': fig_entries,
     }
     
-    lines = ['---']
-    lines.append(yaml.dump(frontmatter, allow_unicode=True, default_flow_style=False, sort_keys=False).strip())
-    lines.append('---')
-    lines.append('')
+    lines = ['---', yaml.dump(fm, allow_unicode=True, default_flow_style=False, sort_keys=False).strip(), '---', '']
+    
+    # Body with inline images
     lines.append(f'# {ds} Paper Reading')
     lines.append('')
     lines.append(f'今日从 arXiv 订阅中筛选 {n} 篇论文。')
     lines.append('')
-    lines.append('## 论文速览')
-    lines.append('')
-    lines.append('| # | arXiv ID | 标题 | 链接 |')
-    lines.append('|---|----------|------|------|')
+    
     for i, p in enumerate(papers):
         aid = p['arxiv_id']
-        lines.append(f'| {i+1} | {aid} | {p["title"]} | [arXiv](https://arxiv.org/abs/{aid}) · [幻觉翻译](https://hjfy.top/arxiv/{aid}) |')
-    lines.append('')
-    
-    for p in papers:
-        aid = p['arxiv_id']
-        lines.append(f'## {aid} — {p["title"]}')
+        title = p['title']
+        
+        lines.append(f'## {title}')
         lines.append('')
-        lines.append(f'- **arXiv**: [{aid}](https://arxiv.org/abs/{aid})')
-        lines.append(f'- **幻觉翻译**: [{aid}](https://hjfy.top/arxiv/{aid})')
-        lines.append(f'- **PDF**: [arxiv.org/pdf/{aid}](https://arxiv.org/pdf/{aid})')
+        lines.append(f'<a href="https://arxiv.org/abs/{aid}" class="arxiv-pill" target="_blank" rel="noreferrer">'
+                     f'<span>Arxiv ID</span>{aid}</a> '
+                     f'<a href="https://hjfy.top/arxiv/{aid}" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer">'
+                     f'<span>幻觉翻译</span>{aid}</a>')
+        lines.append('')
+        
+        # Inline image
+        if aid in figures:
+            lines.append(f'![{title}](/{figures[aid]})')
+            lines.append('')
+        
         lines.append('')
     
     lines.append('---')
     lines.append('')
-    lines.append(f'*自动生成于 {ds} · 基于 arXiv Daily Digest*')
-    lines.append('')
     
-    return '\n'.join(lines)
+    slug = f'{date}-paper-reading'
+    md_content = '\n'.join(lines)
+    md_path = os.path.join(CONTENT_DIR, f'{slug}.md')
+    with open(md_path, 'w') as f:
+        f.write(md_content)
+    
+    print(f"  {date}: {n} papers, {len(figures)} figures → {md_path} ({len(md_content)} chars)")
+    
+    if do_deploy:
+        os.chdir(BLOG_DIR)
+        subprocess.run(['git', 'add', 'src/content/blog/', 'public/images/blog/'], capture_output=True)
+        r = subprocess.run(['git', 'diff', '--cached', '--stat'], capture_output=True, text=True)
+        if '0 files changed' not in r.stdout:
+            subprocess.run(['git', 'commit', '-m', f'Fix paper reading layout for {date}: inline images'], capture_output=True)
+            subprocess.run(['git', 'push'], capture_output=True)
+            print(f"  Deployed: {date}")
 
-def build_and_deploy(date: str):
-    """Build Astro site and push."""
-    os.chdir(BLOG_DIR)
-    
-    # Git
-    subprocess.run(['git', 'add', 'src/content/blog/', 'public/images/blog/'], capture_output=True)
-    r = subprocess.run(['git', 'diff', '--cached', '--stat'], capture_output=True, text=True)
-    if '0 files changed' in r.stdout:
-        print("  Nothing to commit")
-        return
-    
-    subprocess.run(['git', 'commit', '-m', f'Add paper reading blog for {date}'], capture_output=True)
-    subprocess.run(['git', 'push'], capture_output=True)
-    print(f"  Pushed: {date}")
-
-def main():
+if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Usage: generate_blog.py YYYY-MM-DD [--deploy]")
         sys.exit(1)
@@ -162,25 +163,8 @@ def main():
     dates = [d for d in dates if d != '--deploy']
     
     for date in dates:
-        print(f"=== {date} ===")
-        papers = parse_reading_guide(date)
-        print(f"  Papers: {len(papers)}")
+        papers = get_papers_from_date(date)
         if not papers:
-            print("  SKIP")
+            print(f"  {date}: SKIP (no papers)")
             continue
-        
-        figures = download_figures(papers)
-        print(f"  Figures: {len(figures)}/{len(papers)}")
-        
-        md = generate_markdown(date, papers, figures)
-        slug = f'{date}-paper-reading'
-        md_path = os.path.join(CONTENT_DIR, f'{slug}.md')
-        with open(md_path, 'w') as f:
-            f.write(md)
-        print(f"  Written: {md_path} ({len(md)} chars)")
-        
-        if do_deploy:
-            build_and_deploy(date)
-
-if __name__ == '__main__':
-    main()
+        gen(date, papers, do_deploy)

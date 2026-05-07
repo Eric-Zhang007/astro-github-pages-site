@@ -5,92 +5,63 @@ date: '2026-04-21'
 tags:
 - paper reading
 - arXiv
-- world model
-- autonomous driving
-- embodied AI
 category: Research
 comments: true
 draft: false
-figures:
-- src: images/blog/paper-2604.18486.png
-  alt: OneVL One-Step Latent Reasoning and Planning with Vision-Language Explanation
-- src: images/blog/paper-2604.17475.png
-  alt: Waking Up Blind Cold-Start Optimization of Supervision-Free Agentic Trajectories
-    for Grounded Visual Perception
-- src: images/blog/paper-2604.17473.png
-  alt: Dual-Anchoring Addressing State Drift in Vision-Language Navigation
-- src: images/blog/paper-2604.17052.png
-  alt: OASIS On-Demand Hierarchical Event Memory for Streaming Video Reasoning
-- src: images/blog/paper-2604.17488.png
-  alt: AutoVQA-G Self-Improving Agentic Framework for Automated Visual Question Answering
-    and Grounding Annotation
 ---
 
 # 2026-04-21 Paper Reading
 
 今日从 arXiv 订阅中筛选 8 篇论文。
 
-## 论文速览
+## OneVL One-Step Latent Reasoning and Planning with Vision-Language Explanation
 
-| # | arXiv ID | 标题 | 链接 |
-|---|----------|------|------|
-| 1 | 2604.18486 | OneVL One-Step Latent Reasoning and Planning with Vision-Language Explanation | [arXiv](https://arxiv.org/abs/2604.18486) · [幻觉翻译](https://hjfy.top/arxiv/2604.18486) |
-| 2 | 2604.17475 | Waking Up Blind Cold-Start Optimization of Supervision-Free Agentic Trajectories for Grounded Visual Perception | [arXiv](https://arxiv.org/abs/2604.17475) · [幻觉翻译](https://hjfy.top/arxiv/2604.17475) |
-| 3 | 2604.17915 | OneDrive Unified Multi-Paradigm Driving with Vision-Language-Action Models | [arXiv](https://arxiv.org/abs/2604.17915) · [幻觉翻译](https://hjfy.top/arxiv/2604.17915) |
-| 4 | 2604.17651 | Infrastructure-Centric World Models Bridging Temporal Depth and Spatial Breadth for Roadside Perception | [arXiv](https://arxiv.org/abs/2604.17651) · [幻觉翻译](https://hjfy.top/arxiv/2604.17651) |
-| 5 | 2604.17473 | Dual-Anchoring Addressing State Drift in Vision-Language Navigation | [arXiv](https://arxiv.org/abs/2604.17473) · [幻觉翻译](https://hjfy.top/arxiv/2604.17473) |
-| 6 | 2604.17052 | OASIS On-Demand Hierarchical Event Memory for Streaming Video Reasoning | [arXiv](https://arxiv.org/abs/2604.17052) · [幻觉翻译](https://hjfy.top/arxiv/2604.17052) |
-| 7 | 2604.16585 | The Global Neural World Model Spatially Grounded Discrete Topologies for Action-Conditioned Planning | [arXiv](https://arxiv.org/abs/2604.16585) · [幻觉翻译](https://hjfy.top/arxiv/2604.16585) |
-| 8 | 2604.17488 | AutoVQA-G Self-Improving Agentic Framework for Automated Visual Question Answering and Grounding Annotation | [arXiv](https://arxiv.org/abs/2604.17488) · [幻觉翻译](https://hjfy.top/arxiv/2604.17488) |
+<a href="https://arxiv.org/abs/2604.18486" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.18486</a> <a href="https://hjfy.top/arxiv/2604.18486" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.18486</a>
 
-## 2604.18486 — OneVL One-Step Latent Reasoning and Planning with Vision-Language Explanation
+![OneVL One-Step Latent Reasoning and Planning with Vision-Language Explanation](/images/blog/paper-2604.18486.png)
 
-- **arXiv**: [2604.18486](https://arxiv.org/abs/2604.18486)
-- **幻觉翻译**: [2604.18486](https://hjfy.top/arxiv/2604.18486)
-- **PDF**: [arxiv.org/pdf/2604.18486](https://arxiv.org/pdf/2604.18486)
 
-## 2604.17475 — Waking Up Blind Cold-Start Optimization of Supervision-Free Agentic Trajectories for Grounded Visual Perception
+## Waking Up Blind Cold-Start Optimization of Supervision-Free Agentic Trajectories for Grounded Visual Perception
 
-- **arXiv**: [2604.17475](https://arxiv.org/abs/2604.17475)
-- **幻觉翻译**: [2604.17475](https://hjfy.top/arxiv/2604.17475)
-- **PDF**: [arxiv.org/pdf/2604.17475](https://arxiv.org/pdf/2604.17475)
+<a href="https://arxiv.org/abs/2604.17475" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.17475</a> <a href="https://hjfy.top/arxiv/2604.17475" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.17475</a>
 
-## 2604.17915 — OneDrive Unified Multi-Paradigm Driving with Vision-Language-Action Models
+![Waking Up Blind Cold-Start Optimization of Supervision-Free Agentic Trajectories for Grounded Visual Perception](/images/blog/paper-2604.17475.png)
 
-- **arXiv**: [2604.17915](https://arxiv.org/abs/2604.17915)
-- **幻觉翻译**: [2604.17915](https://hjfy.top/arxiv/2604.17915)
-- **PDF**: [arxiv.org/pdf/2604.17915](https://arxiv.org/pdf/2604.17915)
 
-## 2604.17651 — Infrastructure-Centric World Models Bridging Temporal Depth and Spatial Breadth for Roadside Perception
+## OneDrive Unified Multi-Paradigm Driving with Vision-Language-Action Models
 
-- **arXiv**: [2604.17651](https://arxiv.org/abs/2604.17651)
-- **幻觉翻译**: [2604.17651](https://hjfy.top/arxiv/2604.17651)
-- **PDF**: [arxiv.org/pdf/2604.17651](https://arxiv.org/pdf/2604.17651)
+<a href="https://arxiv.org/abs/2604.17915" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.17915</a> <a href="https://hjfy.top/arxiv/2604.17915" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.17915</a>
 
-## 2604.17473 — Dual-Anchoring Addressing State Drift in Vision-Language Navigation
 
-- **arXiv**: [2604.17473](https://arxiv.org/abs/2604.17473)
-- **幻觉翻译**: [2604.17473](https://hjfy.top/arxiv/2604.17473)
-- **PDF**: [arxiv.org/pdf/2604.17473](https://arxiv.org/pdf/2604.17473)
+## Infrastructure-Centric World Models Bridging Temporal Depth and Spatial Breadth for Roadside Perception
 
-## 2604.17052 — OASIS On-Demand Hierarchical Event Memory for Streaming Video Reasoning
+<a href="https://arxiv.org/abs/2604.17651" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.17651</a> <a href="https://hjfy.top/arxiv/2604.17651" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.17651</a>
 
-- **arXiv**: [2604.17052](https://arxiv.org/abs/2604.17052)
-- **幻觉翻译**: [2604.17052](https://hjfy.top/arxiv/2604.17052)
-- **PDF**: [arxiv.org/pdf/2604.17052](https://arxiv.org/pdf/2604.17052)
 
-## 2604.16585 — The Global Neural World Model Spatially Grounded Discrete Topologies for Action-Conditioned Planning
+## Dual-Anchoring Addressing State Drift in Vision-Language Navigation
 
-- **arXiv**: [2604.16585](https://arxiv.org/abs/2604.16585)
-- **幻觉翻译**: [2604.16585](https://hjfy.top/arxiv/2604.16585)
-- **PDF**: [arxiv.org/pdf/2604.16585](https://arxiv.org/pdf/2604.16585)
+<a href="https://arxiv.org/abs/2604.17473" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.17473</a> <a href="https://hjfy.top/arxiv/2604.17473" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.17473</a>
 
-## 2604.17488 — AutoVQA-G Self-Improving Agentic Framework for Automated Visual Question Answering and Grounding Annotation
+![Dual-Anchoring Addressing State Drift in Vision-Language Navigation](/images/blog/paper-2604.17473.png)
 
-- **arXiv**: [2604.17488](https://arxiv.org/abs/2604.17488)
-- **幻觉翻译**: [2604.17488](https://hjfy.top/arxiv/2604.17488)
-- **PDF**: [arxiv.org/pdf/2604.17488](https://arxiv.org/pdf/2604.17488)
+
+## OASIS On-Demand Hierarchical Event Memory for Streaming Video Reasoning
+
+<a href="https://arxiv.org/abs/2604.17052" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.17052</a> <a href="https://hjfy.top/arxiv/2604.17052" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.17052</a>
+
+![OASIS On-Demand Hierarchical Event Memory for Streaming Video Reasoning](/images/blog/paper-2604.17052.png)
+
+
+## The Global Neural World Model Spatially Grounded Discrete Topologies for Action-Conditioned Planning
+
+<a href="https://arxiv.org/abs/2604.16585" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.16585</a> <a href="https://hjfy.top/arxiv/2604.16585" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.16585</a>
+
+
+## AutoVQA-G Self-Improving Agentic Framework for Automated Visual Question Answering and Grounding Annotation
+
+<a href="https://arxiv.org/abs/2604.17488" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.17488</a> <a href="https://hjfy.top/arxiv/2604.17488" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.17488</a>
+
+![AutoVQA-G Self-Improving Agentic Framework for Automated Visual Question Answering and Grounding Annotation](/images/blog/paper-2604.17488.png)
+
 
 ---
-
-*自动生成于 2026-04-21 · 基于 arXiv Daily Digest*

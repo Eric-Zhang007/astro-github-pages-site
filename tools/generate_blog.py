@@ -120,10 +120,12 @@ def gen(date: str, papers: list[dict], do_deploy: bool):
         
         lines.append(f'## {title}')
         lines.append('')
-        lines.append(f'<a href="https://arxiv.org/abs/{aid}" class="arxiv-pill" target="_blank" rel="noreferrer">'
-                     f'<span>Arxiv ID</span>{aid}</a> '
-                     f'<a href="https://hjfy.top/arxiv/{aid}" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer">'
-                     f'<span>幻觉翻译</span>{aid}</a>')
+        lines.append(f'<div class="paper-links paper-links-inline">'
+                     f'<a href="https://arxiv.org/abs/{aid}" target="_blank" rel="noreferrer">'
+                     f'<span>Arxiv ID</span>{aid}</a>'
+                     f'<a href="https://hjfy.top/arxiv/{aid}" target="_blank" rel="noreferrer">'
+                     f'<span>幻觉翻译</span>{aid}</a>'
+                     f'</div>')
         lines.append('')
         
         # Inline image

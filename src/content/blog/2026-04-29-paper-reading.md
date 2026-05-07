@@ -16,54 +16,54 @@ draft: false
 
 ## EgoDyn-Bench Evaluating Ego-Motion Understanding in Vision-Centric Foundation Models for Autonomous Driving
 
-<a href="https://arxiv.org/abs/2604.22851" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22851</a> <a href="https://hjfy.top/arxiv/2604.22851" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22851</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.22851" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.22851</a><a href="https://hjfy.top/arxiv/2604.22851" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.22851</a></div>
 
 
 ## PhysNote Self-Knowledge Notes for Evolvable Physical Reasoning in Vision-Language Model
 
-<a href="https://arxiv.org/abs/2604.24443" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.24443</a> <a href="https://hjfy.top/arxiv/2604.24443" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.24443</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.24443" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.24443</a><a href="https://hjfy.top/arxiv/2604.24443" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.24443</a></div>
 
 ![PhysNote Self-Knowledge Notes for Evolvable Physical Reasoning in Vision-Language Model](/images/blog/paper-2604.24443.png)
 
 
 ## SceneSelect Selective Learning for Trajectory Scene Classification and Expert Scheduling
 
-<a href="https://arxiv.org/abs/2604.24514" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.24514</a> <a href="https://hjfy.top/arxiv/2604.24514" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.24514</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.24514" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.24514</a><a href="https://hjfy.top/arxiv/2604.24514" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.24514</a></div>
 
 ![SceneSelect Selective Learning for Trajectory Scene Classification and Expert Scheduling](/images/blog/paper-2604.24514.png)
 
 
 ## ESIA An Energy-Based Spatiotemporal Interaction-Aware Framework for Pedestrian Intention Prediction
 
-<a href="https://arxiv.org/abs/2604.23728" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.23728</a> <a href="https://hjfy.top/arxiv/2604.23728" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.23728</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.23728" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.23728</a><a href="https://hjfy.top/arxiv/2604.23728" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.23728</a></div>
 
 ![ESIA An Energy-Based Spatiotemporal Interaction-Aware Framework for Pedestrian Intention Prediction](/images/blog/paper-2604.23728.png)
 
 
 ## CF-VLA Efficient Coarse-to-Fine Action Generation for Vision-Language-Action Policies
 
-<a href="https://arxiv.org/abs/2504.16054" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2504.16054</a> <a href="https://hjfy.top/arxiv/2504.16054" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2504.16054</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2504.16054" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2504.16054</a><a href="https://hjfy.top/arxiv/2504.16054" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2504.16054</a></div>
 
 ![CF-VLA Efficient Coarse-to-Fine Action Generation for Vision-Language-Action Policies](/images/blog/paper-2504.16054.png)
 
 
 ## Towards Lawful Autonomous Driving Deriving Scenario-Aware Driving Requirements from Traffic Laws and Regulations
 
-<a href="https://arxiv.org/abs/2604.24562" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.24562</a> <a href="https://hjfy.top/arxiv/2604.24562" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.24562</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.24562" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.24562</a><a href="https://hjfy.top/arxiv/2604.24562" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.24562</a></div>
 
 ![Towards Lawful Autonomous Driving Deriving Scenario-Aware Driving Requirements from Traffic Laws and Regulations](/images/blog/paper-2604.24562.png)
 
 
 ## Global Context or Local Detail Adaptive Visual Grounding for Hallucination Mitigation
 
-<a href="https://arxiv.org/abs/2604.24396" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.24396</a> <a href="https://hjfy.top/arxiv/2604.24396" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.24396</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.24396" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.24396</a><a href="https://hjfy.top/arxiv/2604.24396" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.24396</a></div>
 
 ![Global Context or Local Detail Adaptive Visual Grounding for Hallucination Mitigation](/images/blog/paper-2604.24396.png)
 
 
 ## UpstreamQA A Modular Framework for Explicit Reasoning on Video Question Answering Tasks
 
-<a href="https://arxiv.org/abs/2604.23145" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.23145</a> <a href="https://hjfy.top/arxiv/2604.23145" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.23145</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.23145" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.23145</a><a href="https://hjfy.top/arxiv/2604.23145" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.23145</a></div>
 
 ![UpstreamQA A Modular Framework for Explicit Reasoning on Video Question Answering Tasks](/images/blog/paper-2604.23145.png)
 

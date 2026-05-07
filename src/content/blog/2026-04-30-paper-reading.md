@@ -16,52 +16,52 @@ draft: false
 
 ## OmniVTG A Large-Scale Dataset and Training Paradigm for Open-World Video Temporal Grounding
 
-<a href="https://arxiv.org/abs/2604.25276" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.25276</a> <a href="https://hjfy.top/arxiv/2604.25276" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.25276</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.25276" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.25276</a><a href="https://hjfy.top/arxiv/2604.25276" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.25276</a></div>
 
 ![OmniVTG A Large-Scale Dataset and Training Paradigm for Open-World Video Temporal Grounding](/images/blog/paper-2604.25276.png)
 
 
 ## Instruction-Evidence Contrastive Dual-Stream Decoding for Grounded Vision-Language Reasoning
 
-<a href="https://arxiv.org/abs/2604.25809" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.25809</a> <a href="https://hjfy.top/arxiv/2604.25809" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.25809</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.25809" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.25809</a><a href="https://hjfy.top/arxiv/2604.25809" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.25809</a></div>
 
 
 ## Leveraging Previous-Traversal Point Cloud Map Priors for Camera-Based 3D Object Detection and Tracking
 
-<a href="https://arxiv.org/abs/2604.25405" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.25405</a> <a href="https://hjfy.top/arxiv/2604.25405" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.25405</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.25405" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.25405</a><a href="https://hjfy.top/arxiv/2604.25405" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.25405</a></div>
 
 ![Leveraging Previous-Traversal Point Cloud Map Priors for Camera-Based 3D Object Detection and Tracking](/images/blog/paper-2604.25405.png)
 
 
 ## Biased Dreams Limitations to Epistemic Uncertainty Quantification in Latent Space Models
 
-<a href="https://arxiv.org/abs/2604.25416" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.25416</a> <a href="https://hjfy.top/arxiv/2604.25416" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.25416</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.25416" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.25416</a><a href="https://hjfy.top/arxiv/2604.25416" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.25416</a></div>
 
 
 ## Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models
 
-<a href="https://arxiv.org/abs/2604.25642" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.25642</a> <a href="https://hjfy.top/arxiv/2604.25642" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.25642</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.25642" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.25642</a><a href="https://hjfy.top/arxiv/2604.25642" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.25642</a></div>
 
 ![Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models](/images/blog/paper-2604.25642.png)
 
 
 ## SIEVES Selective Prediction Generalizes through Visual Evidence Scoring
 
-<a href="https://arxiv.org/abs/2604.25855" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.25855</a> <a href="https://hjfy.top/arxiv/2604.25855" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.25855</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.25855" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.25855</a><a href="https://hjfy.top/arxiv/2604.25855" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.25855</a></div>
 
 ![SIEVES Selective Prediction Generalizes through Visual Evidence Scoring](/images/blog/paper-2604.25855.png)
 
 
 ## Interactive Episodic Memory with User Feedback
 
-<a href="https://arxiv.org/abs/2604.24893" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.24893</a> <a href="https://hjfy.top/arxiv/2604.24893" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.24893</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.24893" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.24893</a><a href="https://hjfy.top/arxiv/2604.24893" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.24893</a></div>
 
 ![Interactive Episodic Memory with User Feedback](/images/blog/paper-2604.24893.png)
 
 
 ## Control Your Queries Heterogeneous Query Interaction for Camera-Radar Fusion
 
-<a href="https://arxiv.org/abs/2604.25574" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.25574</a> <a href="https://hjfy.top/arxiv/2604.25574" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.25574</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.25574" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.25574</a><a href="https://hjfy.top/arxiv/2604.25574" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.25574</a></div>
 
 ![Control Your Queries Heterogeneous Query Interaction for Camera-Radar Fusion](/images/blog/paper-2604.25574.png)
 

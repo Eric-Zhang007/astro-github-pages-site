@@ -16,63 +16,63 @@ draft: false
 
 ## 2. Learning to Theorize the World from Observation
 
-<a href="https://arxiv.org/abs/2605.03491" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03491</a> <a href="https://hjfy.top/arxiv/2605.03491" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03491</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.03491" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03491</a><a href="https://hjfy.top/arxiv/2605.03491" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03491</a></div>
 
 ![2. Learning to Theorize the World from Observation](/images/blog/paper-2605.03491.png)
 
 
 ## 3. Reasoning-Guided Grounding: Elevating Video Anomaly Detection through Multimodal Large Language Models (VANGUARD)
 
-<a href="https://arxiv.org/abs/2605.03413" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03413</a> <a href="https://hjfy.top/arxiv/2605.03413" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03413</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.03413" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03413</a><a href="https://hjfy.top/arxiv/2605.03413" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03413</a></div>
 
 ![3. Reasoning-Guided Grounding: Elevating Video Anomaly Detection through Multimodal Large Language Models (VANGUARD)](/images/blog/paper-2605.03413.png)
 
 
 ## 4. Rethinking Temporal Consistency in Video Object-Centric Learning: From Prediction to Correspondence
 
-<a href="https://arxiv.org/abs/2605.02912" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.02912</a> <a href="https://hjfy.top/arxiv/2605.02912" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.02912</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.02912" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.02912</a><a href="https://hjfy.top/arxiv/2605.02912" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.02912</a></div>
 
 ![4. Rethinking Temporal Consistency in Video Object-Centric Learning: From Prediction to Correspondence](/images/blog/paper-2605.02912.png)
 
 
 ## 5. MASRA: MLLM-Assisted Semantic-Relational Consistent Alignment for Video Temporal Grounding
 
-<a href="https://arxiv.org/abs/2605.03650" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03650</a> <a href="https://hjfy.top/arxiv/2605.03650" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03650</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.03650" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03650</a><a href="https://hjfy.top/arxiv/2605.03650" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03650</a></div>
 
 ![5. MASRA: MLLM-Assisted Semantic-Relational Consistent Alignment for Video Temporal Grounding](/images/blog/paper-2605.03650.png)
 
 
 ## 6. VLMaxxing through FrameMogging: Training-Free Anti-Recomputation for Video Vision-Language Models
 
-<a href="https://arxiv.org/abs/2605.03398" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03398</a> <a href="https://hjfy.top/arxiv/2605.03398" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03398</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.03398" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03398</a><a href="https://hjfy.top/arxiv/2605.03398" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03398</a></div>
 
 ![6. VLMaxxing through FrameMogging: Training-Free Anti-Recomputation for Video Vision-Language Models](/images/blog/paper-2605.03398.png)
 
 
 ## 7. Correct Is Not Enough: Training Reasoning Planners with Executor-Grounded Rewards (TraceLift)
 
-<a href="https://arxiv.org/abs/2605.03351" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03351</a> <a href="https://hjfy.top/arxiv/2605.03351" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03351</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.03351" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03351</a><a href="https://hjfy.top/arxiv/2605.03351" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03351</a></div>
 
 ![7. Correct Is Not Enough: Training Reasoning Planners with Executor-Grounded Rewards (TraceLift)](/images/blog/paper-2605.03351.png)
 
 
 ## 8. Say the Mission, Execute the Swarm: Agent-Enhanced LLM Reasoning in the Web-of-Drones
 
-<a href="https://arxiv.org/abs/2605.03862" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03862</a> <a href="https://hjfy.top/arxiv/2605.03862" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03862</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.03862" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03862</a><a href="https://hjfy.top/arxiv/2605.03862" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03862</a></div>
 
 ![8. Say the Mission, Execute the Swarm: Agent-Enhanced LLM Reasoning in the Web-of-Drones](/images/blog/paper-2605.03862.png)
 
 
 ## 9. OGPO: Sample Efficient Full-Finetuning of Generative Control Policies
 
-<a href="https://arxiv.org/abs/2605.03788" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03788</a> <a href="https://hjfy.top/arxiv/2605.03788" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03788</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.03788" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03788</a><a href="https://hjfy.top/arxiv/2605.03788" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03788</a></div>
 
 ![9. OGPO: Sample Efficient Full-Finetuning of Generative Control Policies](/images/blog/paper-2605.03788.png)
 
 
 ## Intro
 
-<a href="https://arxiv.org/abs/2605.03065" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03065</a> <a href="https://hjfy.top/arxiv/2605.03065" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03065</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2605.03065" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2605.03065</a><a href="https://hjfy.top/arxiv/2605.03065" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2605.03065</a></div>
 
 ![Intro](/images/blog/paper-2605.03065.png)
 

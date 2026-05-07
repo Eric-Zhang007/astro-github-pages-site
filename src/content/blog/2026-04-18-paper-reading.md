@@ -16,54 +16,54 @@ draft: false
 
 ## AD4AD Benchmarking Visual Anomaly Detection Models for Safer Autonomous Driving
 
-<a href="https://arxiv.org/abs/2604.15291" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.15291</a> <a href="https://hjfy.top/arxiv/2604.15291" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.15291</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.15291" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.15291</a><a href="https://hjfy.top/arxiv/2604.15291" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.15291</a></div>
 
 
 ## RAD-2 Scaling Reinforcement Learning in a Generator-Discriminator Framework
 
-<a href="https://arxiv.org/abs/2604.15308" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.15308</a> <a href="https://hjfy.top/arxiv/2604.15308" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.15308</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.15308" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.15308</a><a href="https://hjfy.top/arxiv/2604.15308" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.15308</a></div>
 
 ![RAD-2 Scaling Reinforcement Learning in a Generator-Discriminator Framework](/images/blog/paper-2604.15308.png)
 
 
 ## Chain-of-Glimpse Search-Guided Progressive Object-Grounded Reasoning for Video Understanding
 
-<a href="https://arxiv.org/abs/2604.14692" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.14692</a> <a href="https://hjfy.top/arxiv/2604.14692" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.14692</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.14692" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.14692</a><a href="https://hjfy.top/arxiv/2604.14692" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.14692</a></div>
 
 ![Chain-of-Glimpse Search-Guided Progressive Object-Grounded Reasoning for Video Understanding](/images/blog/paper-2604.14692.png)
 
 
 ## UniDoc-RL Coarse-to-Fine Visual RAG with Hierarchical Actions and Dense Rewards
 
-<a href="https://arxiv.org/abs/2604.14967" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.14967</a> <a href="https://hjfy.top/arxiv/2604.14967" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.14967</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.14967" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.14967</a><a href="https://hjfy.top/arxiv/2604.14967" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.14967</a></div>
 
 ![UniDoc-RL Coarse-to-Fine Visual RAG with Hierarchical Actions and Dense Rewards](/images/blog/paper-2604.14967.png)
 
 
 ## Reasoning Dynamics and the Limits of Monitoring Modality Reliance in Vision-Language Models
 
-<a href="https://arxiv.org/abs/2604.14888" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.14888</a> <a href="https://hjfy.top/arxiv/2604.14888" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.14888</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.14888" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.14888</a><a href="https://hjfy.top/arxiv/2604.14888" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.14888</a></div>
 
 ![Reasoning Dynamics and the Limits of Monitoring Modality Reliance in Vision-Language Models](/images/blog/paper-2604.14888.png)
 
 
 ## ADAPT Benchmarking Commonsense Planning under Unspecified Affordance Constraints
 
-<a href="https://arxiv.org/abs/2604.14902" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.14902</a> <a href="https://hjfy.top/arxiv/2604.14902" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.14902</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.14902" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.14902</a><a href="https://hjfy.top/arxiv/2604.14902" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.14902</a></div>
 
 ![ADAPT Benchmarking Commonsense Planning under Unspecified Affordance Constraints](/images/blog/paper-2604.14902.png)
 
 
 ## HY-World 2.0 A Multi-Modal World Model for Reconstructing, Generating, and Simulating 3D Worlds
 
-<a href="https://arxiv.org/abs/2604.14268" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.14268</a> <a href="https://hjfy.top/arxiv/2604.14268" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.14268</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.14268" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.14268</a><a href="https://hjfy.top/arxiv/2604.14268" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.14268</a></div>
 
 ![HY-World 2.0 A Multi-Modal World Model for Reconstructing, Generating, and Simulating 3D Worlds](/images/blog/paper-2604.14268.png)
 
 
 ## Learning Adaptive Reasoning Paths for Efficient Visual Reasoning
 
-<a href="https://arxiv.org/abs/2604.14568" class="arxiv-pill" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.14568</a> <a href="https://hjfy.top/arxiv/2604.14568" class="arxiv-pill translation-pill" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.14568</a>
+<div class="paper-links paper-links-inline"><a href="https://arxiv.org/abs/2604.14568" target="_blank" rel="noreferrer"><span>Arxiv ID</span>2604.14568</a><a href="https://hjfy.top/arxiv/2604.14568" target="_blank" rel="noreferrer"><span>幻觉翻译</span>2604.14568</a></div>
 
 ![Learning Adaptive Reasoning Paths for Efficient Visual Reasoning](/images/blog/paper-2604.14568.png)
 
